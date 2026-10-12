@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>김훈식 문체 규칙</title>
+<meta name="description" content="김훈 소설 네 권에서 뽑은 묘사·설명 규칙과 근거 예문">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* 레이아웃: 왼쪽 고정 목차 + 760px 본문 단. 종이 위 먹색, 네 권은 각자의 색(쇠녹·겨울 남색·흙 황토·이끼)으로 구분한다. */
+:root {
+  --paper: #f3f4f1;
+  --surface: #ffffff;
+  --sunk: #e9ebe6;
+  --ink: #1c211f;
+  --ink-2: #4b534f;
+  --ink-3: #737b77;
+  --line: #d8dcd6;
+  --accent: #2c4757;
+  --accent-soft: #dfe7eb;
+  --good: #2f6b4a;
+  --good-soft: #e3efe7;
+  --bad: #9a4a2f;
+  --bad-soft: #f5e7e1;
+  --kal: #9a3d2c;
+  --nam: #3d6283;
+  --gae: #8a661a;
+  --gong: #4e7259;
+  --f-display: "Nanum Myeongjo", "Noto Serif KR", "AppleMyungjo", "Batang", serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131715; --surface: #1b201e; --sunk: #222826; --ink: #e5e8e4; --ink-2: #b0b8b3; --ink-3: #87908b;
+    --line: #313835; --accent: #9dbdd0; --accent-soft: #23313a; --good: #8fcaa6; --good-soft: #1e2d25;
+    --bad: #e3a28a; --bad-soft: #33241f; --kal: #e48c74; --nam: #8fb5da; --gae: #d9b465; --gong: #95c2a2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131715; --surface: #1b201e; --sunk: #222826; --ink: #e5e8e4; --ink-2: #b0b8b3; --ink-3: #87908b;
+  --line: #313835; --accent: #9dbdd0; --accent-soft: #23313a; --good: #8fcaa6; --good-soft: #1e2d25;
+  --bad: #e3a28a; --bad-soft: #33241f; --kal: #e48c74; --nam: #8fb5da; --gae: #d9b465; --gong: #95c2a2;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.75;
+  word-break: keep-all; overflow-wrap: anywhere;
+  padding-inline: 16px; padding-block: 0 64px;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+q { quotes: "“" "”" "‘" "’"; font-family: var(--f-display); }
+code { font-family: var(--f-mono); font-size: .85em; background: var(--sunk); padding: .1em .35em; border-radius: 3px; }
+strong { font-weight: 600; }
+h1, h2, h3, h4 { font-family: var(--f-display); text-wrap: balance; line-height: 1.35; margin: 0; }
+p { margin: 0; }
+ul, ol { margin: 0; padding-left: 1.25em; }
+.small { font-size: .85rem; color: var(--ink-3); }
+.mini-label { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .06em; color: var(--ink-3); margin-bottom: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; }
+
+/* 쪽 틀 */
+.layout { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; }
+.layout > main { min-width: 0; max-width: 780px; }
+@media (min-width: 1000px) {
+  .layout { grid-template-columns: 220px minmax(0, 1fr); }
+}
+
+/* 목차 */
+.toc { font-size: .9rem; }
+.toc ol { list-style: none; padding: 0; display: grid; gap: 2px; }
+.toc a { text-decoration: none; color: var(--ink-2); }
+.toc > ol > li > a { display: flex; gap: 10px; padding: 4px 8px; border-radius: 4px; }
+.toc > ol > li > a:hover, .toc > ol > li > a.active { background: var(--sunk); color: var(--ink); }
+.nav-n { font-family: var(--f-mono); font-size: .75rem; color: var(--ink-3); min-width: 1.4em; padding-top: 2px; }
+.nav-codes { display: flex; flex-wrap: wrap; gap: 2px 6px; padding: 0 8px 6px 36px; }
+.nav-codes a { font-family: var(--f-mono); font-size: .72rem; color: var(--ink-3); }
+.nav-codes a:hover { color: var(--accent); }
+.toc-mobile { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; }
+.toc-mobile summary { cursor: pointer; font-weight: 600; }
+.toc-mobile ol { margin-top: 10px; }
+.toc-side { display: none; }
+@media (min-width: 1000px) {
+  .toc-mobile { display: none; }
+  .toc-side { display: block; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; max-height: calc(100vh - 48px); overflow-y: auto; padding-top: 48px; }
+  .toc-side .toc-title { font-family: var(--f-display); font-weight: 700; font-size: 1rem; padding: 0 8px 12px; }
+}
+
+/* 머리 */
+.hero { padding-block: 48px 28px; display: grid; gap: 16px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+.hero .eyebrow { font-size: .78rem; letter-spacing: .12em; color: var(--ink-3); font-weight: 600; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; letter-spacing: -.01em; }
+.hero h1 small { display: block; font-family: var(--f-body); font-size: .95rem; font-weight: 500; color: var(--ink-2); letter-spacing: 0; margin-top: 6px; }
+.hero-books { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.hero-meta { list-style: none; padding: 0; display: grid; gap: 6px; color: var(--ink-2); font-size: .93rem; }
+.hero-meta li { padding-left: 14px; position: relative; }
+.hero-meta li::before { content: ""; position: absolute; left: 0; top: .8em; width: 6px; height: 1px; background: var(--ink-3); }
+details.changes { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; font-size: .92rem; }
+details.changes summary { cursor: pointer; font-weight: 600; }
+details.changes ol { margin-top: 8px; display: grid; gap: 4px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .85rem; color: var(--ink-2); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* 작품 표지 */
+.book-tag { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 600; white-space: nowrap; }
+.book-tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
+.b-kal { color: var(--kal); } .b-nam { color: var(--nam); } .b-gae { color: var(--gae); } .b-gong { color: var(--gong); }
+.b-kal-bg { background: var(--kal); } .b-nam-bg { background: var(--nam); } .b-gae-bg { background: var(--gae); } .b-gong-bg { background: var(--gong); }
+th.th-kal { color: var(--kal); } th.th-nam { color: var(--nam); } th.th-gae { color: var(--gae); } th.th-gong { color: var(--gong); }
+
+/* 층위 표지: 핵심=채움, 장치=선, 겉모양=점선 */
+.layer-badge { display: inline-block; font-size: .74rem; font-weight: 600; padding: 1px 8px; border-radius: 3px; border: 1px solid var(--accent); white-space: nowrap; line-height: 1.6; }
+.layer-badge.sm { font-size: .7rem; padding: 0 6px; }
+.lb-core { background: var(--accent); color: var(--surface); }
+.lb-device { color: var(--accent); background: transparent; }
+.lb-surface { color: var(--ink-3); border-color: var(--ink-3); border-style: dashed; background: transparent; }
+
+a.code, a.pchip, a.rchip { font-family: var(--f-mono); font-size: .8em; text-decoration: none; color: var(--accent); border-bottom: 1px dotted currentColor; }
+a.code:hover, a.pchip:hover, a.rchip:hover { border-bottom-style: solid; }
+
+/* 절 */
+.sec { padding-block: 44px 8px; display: grid; gap: 20px; }
+.sec-head { display: flex; gap: 14px; align-items: baseline; border-top: 2px solid var(--ink); padding-top: 14px; }
+.sec-n { font-family: var(--f-mono); font-size: .85rem; color: var(--ink-3); white-space: nowrap; }
+.sec-head h2 { font-size: clamp(1.45rem, 4vw, 1.8rem); font-weight: 800; }
+.sec-sub { color: var(--ink-3); font-size: .9rem; margin-top: 4px; }
+.sec > p, .sec > ul { max-width: 68ch; }
+.sec ul > li + li { margin-top: 4px; }
+h3.subhead { font-size: 1.2rem; margin-top: 12px; }
+.sec h3 { font-weight: 700; }
+
+/* 표 */
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; line-height: 1.6; }
+th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+thead th { font-size: .8rem; color: var(--ink-2); background: var(--sunk); font-weight: 600; white-space: nowrap; }
+tbody tr:last-child > * { border-bottom: 0; }
+table.compare th[scope], table.compare tbody td:first-child { font-weight: 600; white-space: nowrap; }
+table.compare { min-width: 640px; }
+.sec-7 table { min-width: 620px; }
+.sec-7 td:first-child { font-family: var(--f-display); font-weight: 700; }
+
+/* 요약 카드 */
+.summary-tools { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; color: var(--ink-2); font-size: .92rem; }
+.btn { font: inherit; font-size: .88rem; font-weight: 600; padding: 7px 14px; border-radius: 5px; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); cursor: pointer; }
+.btn:hover { filter: brightness(1.1); }
+.copy-status { font-size: .85rem; color: var(--good); }
+.summary-grid { display: grid; gap: 14px; }
+.sgroup { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; display: grid; gap: 8px; }
+.sgroup h3 { font-size: 1.1rem; }
+.sgroup-sub { font-size: .85rem; color: var(--ink-3); }
+.sgroup ol { display: grid; gap: 8px; padding-left: 1.8em; }
+.sgroup ol li::marker { font-family: var(--f-mono); font-size: .85em; color: var(--ink-3); }
+.g-principle { border-top: 3px solid var(--accent); }
+.g-core { border-top: 3px solid var(--accent); border-top-style: double; }
+.g-surface { border-top: 3px dashed var(--ink-3); }
+#summary-plain.show { position: static; width: 100%; height: 12em; clip: auto; white-space: pre-wrap; font: .85rem/1.6 var(--f-body); padding: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
+
+/* 원리 카드 */
+.principles { display: grid; gap: 14px; }
+.principle { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; display: grid; gap: 10px; }
+.principle header { display: flex; gap: 12px; align-items: baseline; }
+.p-code { font-family: var(--f-mono); font-size: .9rem; font-weight: 500; color: var(--surface); background: var(--accent); padding: 0 7px; border-radius: 3px; }
+.principle h4 { font-size: 1.2rem; font-weight: 800; }
+.p-desc { color: var(--ink-2); }
+.p-rules { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 8px; }
+.p-rules .mini-label { margin: 0 6px 0 0; display: inline; }
+
+.layer-cards { display: grid; gap: 12px; }
+@media (min-width: 700px) { .layer-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.layer-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; font-size: .92rem; }
+.layer-card .chips { display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.lc-surface { border-style: dashed; }
+
+.fail-list { display: grid; gap: 10px; }
+.fail-row { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; font-size: .92rem; }
+@media (min-width: 700px) { .fail-row { grid-template-columns: 9em minmax(0, 1fr) minmax(0, 1fr); } }
+.fail-rule { font-family: var(--f-display); font-weight: 700; }
+.fail-bad { border-left: 3px solid var(--bad); padding-left: 10px; }
+.fail-good { border-left: 3px solid var(--good); padding-left: 10px; }
+
+/* 걸러 보기 */
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); padding-block: 10px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.tb-group { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.tb-label { font-size: .75rem; font-weight: 600; color: var(--ink-3); letter-spacing: .06em; margin-right: 2px; }
+.chip { font: inherit; font-size: .8rem; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+.chip:hover { border-color: var(--ink-3); }
+.chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.chip.bk-kal.on { background: var(--kal); border-color: var(--kal); color: var(--surface); }
+.chip.bk-nam.on { background: var(--nam); border-color: var(--nam); color: var(--surface); }
+.chip.bk-gae.on { background: var(--gae); border-color: var(--gae); color: var(--surface); }
+.chip.bk-gong.on { background: var(--gong); border-color: var(--gong); color: var(--surface); }
+body[data-book="kal"] .rules .ex:not([data-book="kal"]),
+body[data-book="nam"] .rules .ex:not([data-book="nam"]),
+body[data-book="gae"] .rules .ex:not([data-book="gae"]),
+body[data-book="gong"] .rules .ex:not([data-book="gong"]) { display: none; }
+.filter-empty { color: var(--ink-3); font-size: .9rem; }
+
+/* 규칙 카드 */
+.rule { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; display: grid; gap: 14px; scroll-margin-top: 80px; }
+.l-surface { border-style: dashed; }
+.rule-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; align-items: start; }
+.rule-code { grid-row: span 2; font-family: var(--f-mono); font-weight: 500; font-size: 1.05rem; min-width: 2.7em; text-align: center; padding: 6px 4px; border-radius: 4px; line-height: 1.2; }
+.l-core .rule-code { background: var(--accent); color: var(--surface); border: 1px solid var(--accent); }
+.l-device .rule-code { color: var(--accent); border: 1px solid var(--accent); }
+.l-surface .rule-code { color: var(--ink-3); border: 1px dashed var(--ink-3); }
+.rule-head h3 { font-size: 1.15rem; font-weight: 800; }
+.rule-meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.rule-meta .pchip { font-size: .78rem; }
+.rule .lead { color: var(--ink); }
+.rule > p { max-width: 68ch; }
+
+.examples { list-style: none; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.examples .ex { display: grid; grid-template-columns: 6.6em minmax(0, 1fr); gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); margin: 0 !important; }
+.ex-body { font-family: var(--f-display); font-size: 1rem; line-height: 1.8; }
+.ex-body q { font-weight: 700; }
+.ex .book-tag { padding-top: 4px; }
+@media (max-width: 520px) {
+  .examples .ex { grid-template-columns: 1fr; gap: 2px; }
+}
+
+.note { display: grid; grid-template-columns: 3.4em minmax(0, 1fr); gap: 10px; padding: 10px 14px; border-radius: 5px; font-size: .95rem; }
+.note-label { font-weight: 600; font-size: .82rem; padding-top: 2px; }
+.n-why { background: var(--accent-soft); }
+.n-why .note-label { color: var(--accent); }
+.n-when { background: var(--sunk); }
+.n-when .note-label { color: var(--ink-2); }
+.n-how { background: var(--good-soft); }
+.n-how .note-label { color: var(--good); }
+
+/* 작품별 */
+.book-cards { display: grid; gap: 14px; }
+@media (min-width: 760px) { .book-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.book-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; font-size: .93rem; }
+.book-card header { display: grid; gap: 2px; }
+.book-card h3 { font-size: 1.05rem; }
+.book-card ul { display: grid; gap: 6px; }
+.book-card li.take { list-style: none; margin-left: -1.25em; margin-top: 4px; padding: 8px 10px; background: var(--sunk); border-radius: 4px; }
+.bc-kal { border-top: 3px solid var(--kal); } .bc-nam { border-top: 3px solid var(--nam); }
+.bc-gae { border-top: 3px solid var(--gae); } .bc-gong { border-top: 3px solid var(--gong); }
+
+/* 바꿔 쓰기 */
+.practice { display: grid; gap: 16px; }
+.pr-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.pr-row { padding: 12px 18px; display: grid; gap: 4px; }
+.pr-row + .pr-row { border-top: 1px solid var(--line); }
+.pr-orig { background: var(--sunk); color: var(--ink-2); }
+.pr-bad .mini-label { color: var(--bad); }
+.pr-good .mini-label { color: var(--good); }
+.pr-good { background: var(--good-soft); }
+.prose { font-family: var(--f-display); font-size: 1.05rem; line-height: 1.85; }
+.pr-bad .prose { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--bad) 55%, transparent); text-decoration-thickness: 1px; }
+.pr-note { font-size: .85rem; color: var(--bad); }
+.pr-tag { font-family: var(--f-mono); font-size: .8rem; color: var(--good); }
+
+/* 적용 메모 */
+.apply-grid { display: grid; gap: 12px; }
+@media (min-width: 700px) { .apply-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.apply-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; font-size: .93rem; }
+
+/* 근거 표 */
+table.evidence { min-width: 560px; font-variant-numeric: tabular-nums; }
+table.evidence tbody th { font-weight: 500; white-space: nowrap; }
+td.cnt { white-space: nowrap; }
+.dots { letter-spacing: 2px; font-size: .7rem; }
+td.c1 .dots { color: var(--ink-3); }
+td.c2 .dots { color: var(--accent); }
+.cnt .n { margin-left: 6px; font-family: var(--f-mono); font-size: .8rem; color: var(--ink-2); }
+tr.total th, tr.total td { font-weight: 700; background: var(--sunk); font-family: var(--f-mono); }
+
+table.stats { min-width: 600px; font-variant-numeric: tabular-nums; }
+table.stats tbody th { font-weight: 500; white-space: nowrap; }
+.bar-cell { position: relative; min-width: 110px; }
+.bar { display: block; height: 6px; border-radius: 3px; opacity: .75; margin: 4px 0 6px; min-width: 2px; }
+.bar-n { font-family: var(--f-mono); font-size: .82rem; }
+
+.foot { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .85rem; color: var(--ink-3); }
+</style>
+
+</head>
+<body>
+
+<div class="layout">
+  <nav class="toc toc-side" aria-label="목차">
+    <div class="toc-title">목차</div>
+    <ol><li><a href="#s0"><span class="nav-n">0</span>요약 카드</a></li><li><a href="#s1"><span class="nav-n">1</span>규칙의 세 층위</a></li><li><a href="#s2"><span class="nav-n">2</span>묘사 규칙 D</a><div class="nav-codes"><a href="#D1">D1</a><a href="#D2">D2</a><a href="#D3">D3</a><a href="#D4">D4</a><a href="#D5">D5</a><a href="#D6">D6</a><a href="#D7">D7</a><a href="#D8">D8</a><a href="#D9">D9</a></div></li><li><a href="#s3"><span class="nav-n">3</span>설명 규칙 E</a><div class="nav-codes"><a href="#E1">E1</a><a href="#E2">E2</a><a href="#E3">E3</a><a href="#E4">E4</a><a href="#E5">E5</a><a href="#E6">E6</a><a href="#E7">E7</a></div></li><li><a href="#s4"><span class="nav-n">4</span>문장과 리듬 S</a><div class="nav-codes"><a href="#S1">S1</a><a href="#S2">S2</a><a href="#S3">S3</a><a href="#S4">S4</a><a href="#S5">S5</a><a href="#S6">S6</a><a href="#S7">S7</a></div></li><li><a href="#s5"><span class="nav-n">5</span>대화 규칙 T</a><div class="nav-codes"><a href="#T1">T1</a><a href="#T2">T2</a><a href="#T3">T3</a></div></li><li><a href="#s6"><span class="nav-n">6</span>작품별 차이</a></li><li><a href="#s7"><span class="nav-n">7</span>피할 것</a></li><li><a href="#s8"><span class="nav-n">8</span>바꿔 쓰기 연습</a></li><li><a href="#s9"><span class="nav-n">9</span>「약속장소」 적용</a></li><li><a href="#s10"><span class="nav-n">10</span>근거 표</a></li><li><a href="#s11"><span class="nav-n">11</span>근거 수치</a></li></ol>
+  </nav>
+  <main>
+    <header class="hero">
+      <span class="eyebrow">김훈식 글쓰기 · 1단계</span>
+      <h1>김훈식 문체 규칙<small>1단계 분석 결과 · 2차 보충판</small></h1>
+      <div class="hero-books">
+        <span class="book-tag b-kal">칼의 노래</span>
+        <span class="book-tag b-nam">남한산성</span>
+        <span class="book-tag b-gae">개</span>
+        <span class="book-tag b-gong">공터에서</span>
+      </div>
+      <ul class="hero-meta"><li>기준 자료: 『칼의 노래』, 『남한산성』, 『개』(개정판), 『공터에서』 (프로젝트에 올린 epub 4권)</li><li>방법: 4권 전문을 텍스트로 뽑아 각 권의 앞·가운데·뒤 부분을 정독하고, 전권을 대상으로 문장 길이와 표지어 빈도를 셌다.</li><li>인용은 문체를 보여 주는 데 필요한 한두 문장으로만 했다. 인용문은 모두 원문과 글자 단위로 대조했다.</li><li>규칙마다 코드(<a class="code" href="#D1">D1</a>, <a class="code" href="#E2">E2</a>, <a class="code" href="#S3">S3</a>…)를 붙였다. 2단계 재구성에서 장면 뒤에 <code>[적용: D1·D3·S1]</code>처럼 표시할 때 쓴다.</li></ul>
+      <div class="legend" aria-label="층위 표시">
+        <span><span class="layer-badge lb-core">핵심 규칙</span> 원리를 직접 구현</span>
+        <span><span class="layer-badge lb-device">장치</span> 원리를 실어 나름</span>
+        <span><span class="layer-badge lb-surface">겉모양 규칙</span> 원리와 함께일 때만</span>
+      </div>
+      <details class="changes">
+        <summary>2차 보충(2026-10-11)에서 바뀐 것</summary>
+        <ol><li>규칙을 세 층으로 나눴다: <strong>핵심 원리(<a class="code" href="#P1">P1</a>~<a class="code" href="#P5">P5</a>)</strong>, 원리를 직접 구현하는 <strong>핵심 규칙</strong>, 원리를 실어 나르는 <strong>장치</strong>, 단독으로 흉내 내면 실패하는 <strong>겉모양 규칙</strong>. (1절)</li><li>모든 규칙에 <strong>왜</strong>(어떤 원리에서 나오는가)와 <strong>언제</strong>(어느 자리에 쓰고, 어디서는 쓰지 않는가)를 붙였다.</li><li>『개』와 『공터에서』의 근거가 약했던 규칙(<a class="code" href="#S1">S1</a>·<a class="code" href="#S2">S2</a>·<a class="code" href="#S5">S5</a>·<a class="code" href="#S7">S7</a>·<a class="code" href="#T2">T2</a>·<a class="code" href="#E6">E6</a> 등)에 두 책의 예문을 보강했다. 두 책은 앞부분뿐 아니라 후반부(『개』 주인의 죽음과 악돌이와의 싸움, 『공터에서』 유품과 형의 체포)에서도 예문을 뽑았다.</li><li><a class="code" href="#D1">D1</a>(감정어 금지)을 실제 원문에 맞게 고쳤다. 김훈도 감정어를 아주 안 쓰지는 않는다. 쓸 때의 형식이 정해져 있다.</li><li>규칙×작품 근거 표(10절)를 넣어 한 작품에 치우쳤는지 확인할 수 있게 했다.</li></ol>
+      </details>
+      <details class="toc toc-mobile">
+        <summary>목차</summary>
+        <ol><li><a href="#s0"><span class="nav-n">0</span>요약 카드</a></li><li><a href="#s1"><span class="nav-n">1</span>규칙의 세 층위</a></li><li><a href="#s2"><span class="nav-n">2</span>묘사 규칙 D</a><div class="nav-codes"><a href="#D1">D1</a><a href="#D2">D2</a><a href="#D3">D3</a><a href="#D4">D4</a><a href="#D5">D5</a><a href="#D6">D6</a><a href="#D7">D7</a><a href="#D8">D8</a><a href="#D9">D9</a></div></li><li><a href="#s3"><span class="nav-n">3</span>설명 규칙 E</a><div class="nav-codes"><a href="#E1">E1</a><a href="#E2">E2</a><a href="#E3">E3</a><a href="#E4">E4</a><a href="#E5">E5</a><a href="#E6">E6</a><a href="#E7">E7</a></div></li><li><a href="#s4"><span class="nav-n">4</span>문장과 리듬 S</a><div class="nav-codes"><a href="#S1">S1</a><a href="#S2">S2</a><a href="#S3">S3</a><a href="#S4">S4</a><a href="#S5">S5</a><a href="#S6">S6</a><a href="#S7">S7</a></div></li><li><a href="#s5"><span class="nav-n">5</span>대화 규칙 T</a><div class="nav-codes"><a href="#T1">T1</a><a href="#T2">T2</a><a href="#T3">T3</a></div></li><li><a href="#s6"><span class="nav-n">6</span>작품별 차이</a></li><li><a href="#s7"><span class="nav-n">7</span>피할 것</a></li><li><a href="#s8"><span class="nav-n">8</span>바꿔 쓰기 연습</a></li><li><a href="#s9"><span class="nav-n">9</span>「약속장소」 적용</a></li><li><a href="#s10"><span class="nav-n">10</span>근거 표</a></li><li><a href="#s11"><span class="nav-n">11</span>근거 수치</a></li></ol>
+      </details>
+    </header>
+    <section class="sec sec-0" id="s0"><header class="sec-head"><span class="sec-n">00</span><div><h2>요약 카드</h2><p class="sec-sub">프로젝트 지시문 [김훈식 문체 규칙] 칸에 그대로 붙여 넣을 수 있는 판</p></div></header><div class="summary-tools"><button type="button" id="copy-summary" class="btn">요약 카드 복사</button><span id="copy-status" class="copy-status" aria-live="polite"></span></div>
+<div class="summary-grid">
+<section class="sgroup g-principle"><h3>핵심 원리</h3><p class="sgroup-sub">이것이 빠지면 겉모양을 다 갖춰도 김훈이 아니다</p><ol>
+<li value="1"><strong>판단은 독자에게 넘긴다.</strong> 서술은 감정이나 평가의 결론을 말하지 않고, 결론에 이르는 근거(몸, 사물, 숫자)만 놓는다. (<a class="code" href="#P1">P1</a>)</li>
+<li value="2"><strong>세계는 인물의 사정과 상관없이 돌아간다.</strong> 자연, 시간, 제도는 인물의 고통에 응답하지 않는다. (<a class="code" href="#P2">P2</a>)</li>
+<li value="3"><strong>몸과 감각이 먼저 안다.</strong> 생각보다 먼저 몸이 반응하고, 냄새와 소리가 세계를 가른다. (<a class="code" href="#P3">P3</a>)</li>
+<li value="4"><strong>아는 것과 모르는 것을 가른다.</strong> 확인한 것은 단정하고, 모르는 것은 모른다고 쓰고, 짐작은 짐작으로 표시한다. (<a class="code" href="#P4">P4</a>)</li>
+<li value="5"><strong>큰 말을 의심하고 사물의 이름을 믿는다.</strong> 꾸민 말과 명분은 관찰의 대상이 되고, 서술 자체는 물목·숫자·고유명사로 선다. (<a class="code" href="#P5">P5</a>)</li>
+</ol></section>
+<section class="sgroup g-core"><h3>핵심 규칙과 장치</h3><p class="sgroup-sub">원리를 문장으로 옮기는 방법</p><ol>
+<li value="6">감정은 몸의 반응으로 쓴다. 감정어를 쓸 때는 원인이 되는 사물을 먼저 놓고 한 낱말로 끝낸다. (<a class="code" href="#D1">D1</a>)</li>
+<li value="7">감정이 가장 커지는 자리에서 시선을 그 공간의 무심한 풍경으로 돌리고 장면을 닫는다. (<a class="code" href="#D2">D2</a>)</li>
+<li value="8">피, 똥, 오줌, 병든 몸을 형용사 없이 사실처럼 적는다. 명분이 커지는 대목 바로 옆에 놓는다. (<a class="code" href="#D7">D7</a>)</li>
+<li value="9">원리는 단정하고, 그 원리가 사람에게 무엇을 하는지 끝까지 따라가 가장 짧은 문장으로 끝낸다. (<a class="code" href="#E1">E1</a>·<a class="code" href="#E3">E3</a>)</li>
+<li value="10">감정이 가장 클 법한 대목에서 오히려 행정과 셈법의 언어를 쓴다. (<a class="code" href="#E2">E2</a>)</li>
+<li value="11">장면은 냄새와 소리로 열고, 뭉뚱그린 낱말 대신 물목을 적는다. (<a class="code" href="#D3">D3</a>·<a class="code" href="#D6">D6</a>)</li>
+</ol></section>
+<section class="sgroup g-surface"><h3>겉모양 규칙</h3><p class="sgroup-sub">원리와 함께 쓸 때만 효과가 있다</p><ol>
+<li value="12">사실·행동·판정은 짧은 단문으로, 풍경의 흐름과 맴도는 생각은 긴 문장으로 쓴다. (<a class="code" href="#S1">S1</a>)</li>
+<li value="13"><q>그녀</q>를 쓰지 않고 이름, <q>그 여자</q>, 직함을 되풀이한다. 접속어를 아낀다. (<a class="code" href="#S2">S2</a>·<a class="code" href="#S3">S3</a>)</li>
+<li value="14">대사는 짧게, 대사 뒤에 감정 해설을 붙이지 않는다. (<a class="code" href="#T1">T1</a>)</li>
+</ol></section>
+</div>
+<textarea id="summary-plain" class="visually-hidden" readonly tabindex="-1" aria-hidden="true">[김훈식 문체 규칙]
+**핵심 원리 (이것이 빠지면 겉모양을 다 갖춰도 김훈이 아니다)**
+1. **판단은 독자에게 넘긴다.** 서술은 감정이나 평가의 결론을 말하지 않고, 결론에 이르는 근거(몸, 사물, 숫자)만 놓는다. (P1)
+2. **세계는 인물의 사정과 상관없이 돌아간다.** 자연, 시간, 제도는 인물의 고통에 응답하지 않는다. (P2)
+3. **몸과 감각이 먼저 안다.** 생각보다 먼저 몸이 반응하고, 냄새와 소리가 세계를 가른다. (P3)
+4. **아는 것과 모르는 것을 가른다.** 확인한 것은 단정하고, 모르는 것은 모른다고 쓰고, 짐작은 짐작으로 표시한다. (P4)
+5. **큰 말을 의심하고 사물의 이름을 믿는다.** 꾸민 말과 명분은 관찰의 대상이 되고, 서술 자체는 물목·숫자·고유명사로 선다. (P5)
+
+**핵심 규칙과 장치 (원리를 문장으로 옮기는 방법)**
+6. 감정은 몸의 반응으로 쓴다. 감정어를 쓸 때는 원인이 되는 사물을 먼저 놓고 한 낱말로 끝낸다. (D1)
+7. 감정이 가장 커지는 자리에서 시선을 그 공간의 무심한 풍경으로 돌리고 장면을 닫는다. (D2)
+8. 피, 똥, 오줌, 병든 몸을 형용사 없이 사실처럼 적는다. 명분이 커지는 대목 바로 옆에 놓는다. (D7)
+9. 원리는 단정하고, 그 원리가 사람에게 무엇을 하는지 끝까지 따라가 가장 짧은 문장으로 끝낸다. (E1·E3)
+10. 감정이 가장 클 법한 대목에서 오히려 행정과 셈법의 언어를 쓴다. (E2)
+11. 장면은 냄새와 소리로 열고, 뭉뚱그린 낱말 대신 물목을 적는다. (D3·D6)
+
+**겉모양 규칙 (원리와 함께 쓸 때만 효과가 있다)**
+12. 사실·행동·판정은 짧은 단문으로, 풍경의 흐름과 맴도는 생각은 긴 문장으로 쓴다. (S1)
+13. &quot;그녀&quot;를 쓰지 않고 이름, &quot;그 여자&quot;, 직함을 되풀이한다. 접속어를 아낀다. (S2·S3)
+14. 대사는 짧게, 대사 뒤에 감정 해설을 붙이지 않는다. (T1)</textarea></section>
+<section class="sec sec-1" id="s1"><header class="sec-head"><span class="sec-n">01</span><div><h2>규칙의 세 층위: 무엇이 원리이고 무엇이 겉모양인가</h2></div></header><h3 class="subhead">1-1. 핵심 원리 다섯 가지</h3>
+<p>김훈의 묘사와 설명은 모두 아래 다섯 가지 태도에서 나온다. 규칙을 적용하다 판단이 서지 않을 때는 이 다섯 가지로 돌아가면 된다.</p>
+<div class="principles">
+<article class="principle" id="P1"><header><span class="p-code">P1</span><h4>판단을 넘긴다</h4></header><p class="p-desc">서술자가 결론(슬프다, 잔인하다, 부당하다)을 대신 내리지 않는다. 근거만 놓는다.</p><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">머리와 코를 소금에 절여 바치는 절차만 적고 분노를 말하지 않는다</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">배급량을 홉 단위로 적을 뿐 굶주림을 한탄하지 않는다</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">배를 건지는 비용이 뱃값보다 비싸서 건지지 않았다고만 쓴다</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">아버지의 죽음 보고에 당직사관이 서류 목록을 읊는다</span></li></ul><div class="p-rules"><span class="mini-label">이 원리에서 나온 규칙</span><a class="rchip" href="#D1">D1</a><a class="rchip" href="#D2">D2</a><a class="rchip" href="#D4">D4</a><a class="rchip" href="#D7">D7</a><a class="rchip" href="#E2">E2</a><a class="rchip" href="#E3">E3</a><a class="rchip" href="#S3">S3</a><a class="rchip" href="#S6">S6</a><a class="rchip" href="#T1">T1</a></div></article>
+<article class="principle" id="P2"><header><span class="p-code">P2</span><h4>무심한 세계</h4></header><p class="p-desc">자연·시간·제도는 인물의 감정에 응답하지 않는다. 그 무심함이 인물의 고통을 키운다.</p><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">함거가 서울에 들 때 밤섬에 살구꽃이 핀다</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>산야에는 본래 추위나 더위가 없었다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">주인을 묻은 다음 날 아침 고깃배가 평소처럼 나간다</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">형이 압송되는 차 밖으로 한강 하구가 썰물이다</span></li></ul><div class="p-rules"><span class="mini-label">이 원리에서 나온 규칙</span><a class="rchip" href="#D2">D2</a><a class="rchip" href="#D5">D5</a><a class="rchip" href="#E2">E2</a><a class="rchip" href="#E4">E4</a><a class="rchip" href="#S6">S6</a></div></article>
+<article class="principle" id="P3"><header><span class="p-code">P3</span><h4>몸이 먼저 안다</h4></header><p class="p-desc">인식은 몸의 반응과 감각에서 시작한다. 냄새와 소리는 피할 수 없이 몸으로 들어온다.</p><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">식은땀, 칼의 쇠비린내, 노 젓는 환청</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">청병 군마의 김에서 나는 누린내, 언 강이 터지는 소리</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">세계를 냄새의 거리와 밀도로 분류한다</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">언 발가락, 아버지의 아가미 같은 턱 밑, 출산의 비린 냄새</span></li></ul><div class="p-rules"><span class="mini-label">이 원리에서 나온 규칙</span><a class="rchip" href="#D1">D1</a><a class="rchip" href="#D3">D3</a><a class="rchip" href="#D4">D4</a><a class="rchip" href="#D7">D7</a><a class="rchip" href="#D8">D8</a></div></article>
+<article class="principle" id="P4"><header><span class="p-code">P4</span><h4>앎과 모름을 가른다</h4></header><p class="p-desc">확인한 사실은 단정하고, 남의 속과 보지 못한 일은 모른다고 하거나 짐작의 어미로 쓴다.</p><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>나는 보았으므로 안다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">임금은 장계의 내용을 묻지 않고, 서술은 <q>~을 터였다</q>로 짐작한다</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>나는 모른다.</q> 개는 죽음이 무엇인지 모른다고 말한다</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">마차세는 아버지의 <q>미안허다</q>가 무슨 뜻인지 <q>알 수 없었지만</q> 그 말이 하는 일을 짚는다</span></li></ul><div class="p-rules"><span class="mini-label">이 원리에서 나온 규칙</span><a class="rchip" href="#E1">E1</a><a class="rchip" href="#E7">E7</a><a class="rchip" href="#S4">S4</a><a class="rchip" href="#T2">T2</a></div></article>
+<article class="principle" id="P5"><header><span class="p-code">P5</span><h4>큰 말을 의심한다</h4></header><p class="p-desc">명분, 교서, 꾸민 말, 공허한 말은 관찰 대상이 되고, 서술은 사물의 이름과 숫자로 선다.</p><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">임금의 장려한 교서와 울음을 <q>언어와 울음이 임금의 권력이었고</q>로 본다</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">대신들의 말이 <q>기름진 뱀과 같았고</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">장례에서 사내들이 <q>하나 마나 한 말들을 지껄이고 있었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>말을 말하려니까 말이 잘 나오지 않았다.</q></span></li></ul><div class="p-rules"><span class="mini-label">이 원리에서 나온 규칙</span><a class="rchip" href="#D6">D6</a><a class="rchip" href="#D9">D9</a><a class="rchip" href="#E5">E5</a><a class="rchip" href="#S7">S7</a><a class="rchip" href="#T1">T1</a><a class="rchip" href="#T2">T2</a></div></article>
+</div>
+<h3 class="subhead">1-2. 규칙의 분류</h3>
+
+<div class="layer-cards">
+<div class="layer-card lc-core"><span class="layer-badge lb-core">핵심 규칙</span><p>원리를 문장 단위로 직접 구현한다. 하나라도 빠지면 김훈식이 무너진다.</p><div class="chips"><a class="rchip" href="#D1">D1</a><a class="rchip" href="#D2">D2</a><a class="rchip" href="#D7">D7</a><a class="rchip" href="#E1">E1</a><a class="rchip" href="#E2">E2</a><a class="rchip" href="#E3">E3</a><a class="rchip" href="#E7">E7</a><a class="rchip" href="#T2">T2</a></div></div>
+<div class="layer-card lc-device"><span class="layer-badge lb-device">장치</span><p>원리를 실어 나르는 기술이다. 원리와 함께 쓰면 효과가 크고, 원리 없이 쓰면 장식이 된다.</p><div class="chips"><a class="rchip" href="#D3">D3</a><a class="rchip" href="#D4">D4</a><a class="rchip" href="#D5">D5</a><a class="rchip" href="#D6">D6</a><a class="rchip" href="#D8">D8</a><a class="rchip" href="#E5">E5</a><a class="rchip" href="#E6">E6</a><a class="rchip" href="#T1">T1</a></div></div>
+<div class="layer-card lc-surface"><span class="layer-badge lb-surface">겉모양 규칙</span><p>문장의 외형이다. 이것만 흉내 내면 '짧고 무뚝뚝한 문장'이 될 뿐 김훈이 되지 않는다.</p><div class="chips"><a class="rchip" href="#S1">S1</a><a class="rchip" href="#S2">S2</a><a class="rchip" href="#S3">S3</a><a class="rchip" href="#S4">S4</a><a class="rchip" href="#S5">S5</a><a class="rchip" href="#S6">S6</a><a class="rchip" href="#S7">S7</a><a class="rchip" href="#T3">T3</a><a class="rchip" href="#D9">D9</a><a class="rchip" href="#E4">E4</a></div></div>
+</div>
+<h3 class="subhead">1-3. 겉모양만 흉내 내면 생기는 실패</h3>
+
+<div class="fail-list">
+<div class="fail-row"><div class="fail-rule"><a class="code" href="#S1">S1</a> 단문</div><div class="fail-bad"><span class="mini-label">흉내만 냈을 때</span><p>모든 문장을 잘라서 전보문처럼 툭툭 끊긴다. 감정어는 그대로 남는다. (<q>나는 슬펐다. 그가 보고 싶었다.</q>)</p></div><div class="fail-good"><span class="mini-label">원리까지 담았을 때</span><p>단문은 사실과 판정에만 쓰고, 풍경과 맴도는 생각은 긴 문장으로 흘린다.</p></div></div>
+<div class="fail-row"><div class="fail-rule"><a class="code" href="#S2">S2</a> <q>그녀</q> 금지</div><div class="fail-bad"><span class="mini-label">흉내만 냈을 때</span><p><q>그녀</q>를 <q>그 여자</q>로 바꿨을 뿐 문장이 그 여자의 마음을 해설한다.</p></div><div class="fail-good"><span class="mini-label">원리까지 담았을 때</span><p>이름과 <q>그 여자</q>를 되풀이하면서 그 여자의 손, 머리카락, 발뒤꿈치를 적는다.</p></div></div>
+<div class="fail-row"><div class="fail-rule"><a class="code" href="#E4">E4</a> 아포리즘</div><div class="fail-bad"><span class="mini-label">흉내만 냈을 때</span><p>근거 없이 격언을 붙여 설교가 된다.</p></div><div class="fail-good"><span class="mini-label">원리까지 담았을 때</span><p>사실이 충분히 쌓인 문단 끝에 한 줄로 거둬들인다.</p></div></div>
+<div class="fail-row"><div class="fail-rule"><a class="code" href="#D9">D9</a> <q>~처럼</q></div><div class="fail-bad"><span class="mini-label">흉내만 냈을 때</span><p>관념적인 비유가 많아진다(<q>인상파의 화폭처럼</q>). 원작 「약속장소」의 문체가 그렇다.</p></div><div class="fail-good"><span class="mini-label">원리까지 담았을 때</span><p>비유는 손에 잡히는 사물에만 견주고, 감각을 정확하게 하는 데만 쓴다.</p></div></div>
+<div class="fail-row"><div class="fail-rule"><a class="code" href="#S3">S3</a> 접속어 생략</div><div class="fail-bad"><span class="mini-label">흉내만 냈을 때</span><p>접속어만 빼서 문장 사이가 끊긴다.</p></div><div class="fail-good"><span class="mini-label">원리까지 담았을 때</span><p>문장 순서 자체가 인과를 만든다. 원리 → 결과 → 귀결(<a class="code" href="#E3">E3</a>) 순서로 놓으면 <q>그래서</q> 없이 이어진다.</p></div></div>
+<div class="fail-row"><div class="fail-rule"><a class="code" href="#S6">S6</a> 짧은 마감</div><div class="fail-bad"><span class="mini-label">흉내만 냈을 때</span><p>장면마다 기계적으로 짧은 문장을 붙인다.</p></div><div class="fail-good"><span class="mini-label">원리까지 담았을 때</span><p>감정을 정리하는 문장 대신 사실로 끊어 판단을 독자에게 남긴다(<a class="code" href="#P1">P1</a>).</p></div></div>
+</div></section>
+<section class="sec sec-2 rules" id="s2"><header class="sec-head"><span class="sec-n">02</span><div><h2>묘사 규칙</h2><p class="sec-sub">D</p></div></header><div class="toolbar" role="group" aria-label="규칙 걸러 보기"><div class="tb-group"><span class="tb-label">층위</span><button type="button" class="chip on" data-layer-filter="all" aria-pressed="true">전체</button><button type="button" class="chip" data-layer-filter="core" aria-pressed="false">핵심 규칙</button><button type="button" class="chip" data-layer-filter="device" aria-pressed="false">장치</button><button type="button" class="chip" data-layer-filter="surface" aria-pressed="false">겉모양</button></div><div class="tb-group"><span class="tb-label">예문</span><button type="button" class="chip on" data-book-filter="all" aria-pressed="true">네 권 모두</button><button type="button" class="chip bk-kal" data-book-filter="kal" aria-pressed="false">칼의 노래</button><button type="button" class="chip bk-nam" data-book-filter="nam" aria-pressed="false">남한산성</button><button type="button" class="chip bk-gae" data-book-filter="gae" aria-pressed="false">개</button><button type="button" class="chip bk-gong" data-book-filter="gong" aria-pressed="false">공터에서</button></div></div><p>여기서 '묘사'는 감정을 직접 말하지 않고 감각·사물·몸의 반응으로 보여 주는 서술이다.</p>
+<article class="rule l-core" id="D1" data-layer="core"><header class="rule-head"><span class="rule-code">D1</span><h3>감정은 몸의 반응으로 쓴다</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P3">P3</a></div></header><p class="lead">감정을 이름으로 부르는 일이 드물다. 4권 전체(약 190만 바이트)에서 <q>슬펐다</q>는 2번, <q>기뻤다</q>와 <q>그리웠다</q>는 한 번도 나오지 않는다. 그 자리를 몸이 채운다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>나는 등판으로 식은땀을 흘렸다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>김류의 목소리에 울음이 섞였다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>늙은 할머니는 울음소리도 메말라서 목구멍이 찢어지듯이 끼룩끼룩했다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>군화 속에서, 언 발가락은 아무런 감각도 없이 남의 물건처럼 멀었는데, 그 멀고 먼 발가락의 고통은 불로 지지듯이 달려들었다.</q></span></li></ul>
+<p><strong>감정어를 쓸 때의 형식.</strong> 김훈도 감정어를 아주 안 쓰지는 않는다. 쓸 때는 네 권 모두 같은 형식을 따른다. ① 감정의 원인이 되는 구체적인 사물이 먼저 나오고, ② 감정은 한 낱말로 끝나며, ③ 그 감정을 해설하는 문장이 뒤따르지 않는다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>스무 냥의 무게와 질감은 섬뜩했다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>용골대는 문득 그 적막이 두려웠다.</q> 바로 뒤에 감정 해설 대신 척후장을 불러 경계를 넓히는 행동이 온다.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>밭고랑에 쪼그리고 앉은 할머니의 몸이 너무 작아서 나는 마음이 아팠다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>고리짝은 가벼웠다. 마차세는 그 가벼움이 섬뜩했다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>감정어는 독자가 내릴 판단을 서술자가 먼저 끝내 버린다. 몸의 반응은 근거만 주고 결론은 독자에게 남긴다(<a class="code" href="#P1">P1</a>). 또 김훈의 인물들은 감정을 말로 할 수 없는 처지에 있다. 죄인이 된 장수, 표정 없는 임금, 말을 못 하는 개, 말이 막히는 아들이다. 몸은 그 처지에서도 거짓말을 하지 못한다(<a class="code" href="#P3">P3</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>감정이 서사의 중심일수록 엄격하게 지킨다. 감정어를 꼭 써야 하면 위 형식으로 쓰고, 한 장면에 한 번을 넘기지 않는다.</p></div>
+<div class="note n-how"><span class="note-label">적용법</span><p><q>그는 불안했다</q> → 손, 숨, 목소리, 땀, 시선 가운데 하나를 골라 그 변화만 적는다. 그래도 감정어가 필요하면 <q>[그 사물]이 [감정]했다</q> 꼴로 한 번만 쓴다.</p></div></article>
+<article class="rule l-core" id="D2" data-layer="core"><header class="rule-head"><span class="rule-code">D2</span><h3>감정의 정점에서 시선을 바깥 풍경으로 돌린다</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P2">P2</a></div></header><p class="lead">인물의 마음이 가장 크게 흔들리는 자리에서 서술은 인물을 떠나 무심한 풍경 한 문장을 놓는다. 그 풍경이 감정을 대신 떠맡는다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">함거에 실려 서울로 들어가는 장의 끝 <q>서울에는 봄비가 내렸고 한강 밤섬에는 안개 속에서 살구꽃이 피어 있었다.</q> / 하동 수령들이 울고 돌아간 뒤 <q>어두워지는 물가에서 왜가리 몇 마리가 물 위에 비친 제 그림자를 들여다보고 있었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">임금이 남대문 문루에 올라 피난길이 막힌 순간 <q>천장에서 놀란 새들이 퍼덕거렸다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">노인이 물에 뛰어든 뒤 <q>물 위에는 바람만 불었다.</q> / 주인을 묻고 할머니에게 매를 맞은 다음 날 <q>아침 새들이 숲에서 퍼덕거렸고, 다시 바다로 나아가는 사람들의 고깃배 두어 척이 푸른 고리연기를 토해내며 무인등대 사이를 빠져나가고 있었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">딸이 태어난 밤 <q>병실 창밖으로 눈발이 점점 더 굵어지고 있었다.</q> / 형 마장세가 수갑을 차고 압송되는 차 안에서 <q>한강 하구는 썰물이었다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>세계는 인물의 고통에 응답하지 않는다(<a class="code" href="#P2">P2</a>). 무심한 풍경을 감정 옆에 놓으면 그 대비 때문에 감정이 오히려 커진다. 동시에 해설 없이 장면을 닫는 방법이다(<a class="code" href="#P1">P1</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>장면이나 장의 마지막, 감정이 최고조에 이른 직후에 쓴다. 풍경은 그 공간에 실제로 있는 것이어야 한다. 병실이면 병실 창밖, 차 안이면 차창 밖이다. 문단마다 쓰면 기법이 드러나므로 한 장면에 한 번이 적당하다.</p></div></article>
+<article class="rule l-device" id="D3" data-layer="device"><header class="rule-head"><span class="rule-code">D3</span><h3>냄새와 소리로 연다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P3">P3</a></div></header><p class="lead">김훈의 장면은 눈보다 코와 귀로 먼저 열린다. <q>냄새</q>는 『개』에서 1만 자당 21회로 압도적이고, 다른 세 권에서도 1만 자당 2~4회 꾸준히 나온다. <q>소리</q>는 네 권 모두 1만 자당 5~9회다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>한산, 거제, 고성 쪽에서 불어오는 동풍에는 꽃 핀 숲의 향기 속에 인육이 썩어가는 고린내가 스며 있었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">청 군영의 말들이 뿜는 김 <q>김에서 누린내가 났다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>냄새에도 거리가 있다. 먼 냄새가 있고 가까운 냄새가 있다.</q> / 악돌이를 찾아가는 길 <q>장마가 끝나고 습기가 걷힌 논둑길은 잘 말라서 흙냄새와 풀 냄새, 그리고 익어가는 벼 냄새가 서로 섞여들지 않았다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>천지간에 눈 비린내가 자욱했다.</q> / 아버지가 죽던 날 <q>그날, 날이 흐려서 마을에 연탄가스 냄새가 자욱했다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>시각은 멀리 떨어져서 볼 수 있지만 냄새와 소리는 피할 수 없이 몸 안으로 들어온다. 그래서 인물이 그 상황에서 벗어날 수 없다는 것을 보여 준다(<a class="code" href="#P3">P3</a>). 또 냄새는 <q>아름답다/추하다</q> 같은 판정 대신 성분과 출처(젖, 쇠, 젓국, 연탄가스, 휘발유)로 적을 수 있다(<a class="code" href="#P1">P1</a>·<a class="code" href="#P5">P5</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>장면을 열 때, 공간이 바뀔 때, 인물이 낯선 곳에 들어설 때. 화자의 몸이 특별할 때(『개』의 개, 「약속장소」의 투명해지는 몸) 비중을 크게 한다.</p></div></article>
+<article class="rule l-device" id="D4" data-layer="device"><header class="rule-head"><span class="rule-code">D4</span><h3>아름다움과 참혹함, 상반된 감각을 한 문장에 포갠다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P3">P3</a></div></header><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">꽃향기와 송장 고린내가 한 바람에 실린다(<a class="code" href="#D3">D3</a>의 예문). 칼을 두고 <q>칼이 뜨거운 물건인지 차가운 물건인지를 나는 늘 분간하기 어려웠다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>사람 피와 말 피가 눈에 스며 얼었고, 그 위에 또 눈이 내렸다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">아기 냄새 <q>달콤하면서도 시큼했다.</q> / 주인아주머니가 말리는 물고기 <q>속살은 아침의 첫 햇살처럼 투명한 분홍색이었고 그 속에서 잔가시들이 내비쳤다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">피난지 부산 <q>해운대는 모래밭 경사가 완만하고 파도가 순해서 똥 누기에 좋았다.</q> / 출산한 병실의 냄새 <q>냄새는 몸에 묻을 듯이 비리고 축축했다. 마차세는 그 냄새를 깊이 빨아들였다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>세상은 한 가지 판정으로 정리되지 않는다. 아름다움과 추함을 한 문장에 넣으면 독자가 어느 한쪽으로 쉽게 판단하지 못한다(<a class="code" href="#P1">P1</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>참혹한 장면(전쟁, 죽음, 병, 가난)을 쓸 때, 또는 아름다운 장면에 무게를 줄 때.</p></div></article>
+<article class="rule l-device" id="D5" data-layer="device"><header class="rule-head"><span class="rule-code">D5</span><h3>사물과 자연, 추상에 동사를 준다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P2">P2</a></div></header><p class="lead">사람이 아닌 것이 주어가 되어 움직인다. 자연, 시간, 말(言), 끼니 같은 추상이 짐승처럼 행동한다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>끼니는 파도처럼 정확하고 쉴새없이 밀어닥쳤다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">대신들의 말이 <q>기름진 뱀과 같았고</q>, <q>습기가 빠져서 가벼운 바람은 결마다 날이 서 있었고</q>.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>비에 젖은 후박나무가 축축한 향기를 토해냈고</q>. / <q>파도의 떼들은 흰 거품을 옆으로 잇대어가면서 끝도 없이 달려들었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>시간은 마동수의 생명과는 무관하게, 먼 변방으로 몰려가고 있었는데</q>.</span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>시간, 날씨, 끼니, 병, 말은 사람보다 힘이 세다(<a class="code" href="#P2">P2</a>). 사람이 주어가 아닌 문장이 많아질수록 인물은 무력해 보인다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>인물이 어찌할 수 없는 힘을 다룰 때. 동사는 물리적인 것(밀어닥치다, 몰려가다, 토해내다, 달려들다)으로 고른다. <q>속삭이다, 노래하다</q> 같은 감상적인 동사를 쓰면 서정시가 된다.</p></div></article>
+<article class="rule l-device" id="D6" data-layer="device"><header class="rule-head"><span class="rule-code">D6</span><h3>물목을 정확히 적는다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P5">P5</a></div></header><p class="lead">뭉뚱그린 낱말(<q>음식</q>, <q>짐</q>, <q>물건</q>) 대신 목록을 적는다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">장터에 <q>봄미나리, 메주, 두어 되씩의 콩, 팥, 조, 수수가 나와 있었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">청 군영 바닥에 깔린 조선 백성의 이불 <q>학이나 거북을 수놓은 누비이불과 태극무늬로 마구리를 댄 베개도 있었다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>주인님의 배는 2톤짜리 연안 채낚기 목선이었다.</q> / 주인이 죽은 뒤 어장을 넘기면서 <q>주인님이 쓰던 뜰채, 갈고리, 소쿠리며 뚫어진 그물을 꿰맬 때 쓰는 나일론 실과 바늘 뭉치도 끼워서 넘겨주었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>철사로 엮은 시장 가방 속에 고등어, 두부, 무, 배추가 담겨 있었고, 대파가 가방 위로 구부러져 있었다.</q> / 어머니의 유품 <q>고리짝 맨 위에는 미군 군복 상하의가 가지런히 접혀 있었다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>사물의 이름은 꾸미지 않는다(<a class="code" href="#P5">P5</a>). 목록 하나가 시대와 계층과 처지를 해설 없이 보여 준다. 유품 목록이 곧 그 사람의 생애가 된다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>인물의 처지를 드러내야 할 때(가난, 전쟁, 이사, 죽음과 유품, 장보기). 목록은 서너 개로 끊는다. 길어지면 카탈로그가 된다.</p></div></article>
+<article class="rule l-core" id="D7" data-layer="core"><header class="rule-head"><span class="rule-code">D7</span><h3>몸과 생리를 피하지 않고 건조하게</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P3">P3</a><a class="pchip" href="#P5">P5</a></div></header><p class="lead">피, 똥, 오줌, 체액, 병든 몸을 감추지 않는다. 형용사로 혐오나 연민을 덧칠하지 않고 사실처럼 적는다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">매 맞아 죽은 아전 <q>그의 몸은 으스러져서 죽처럼 흘러내렸다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>눈 위에 말 오줌이 누렇게 얼어 있었다.</q> / 피난길에 <q>뒤쪽으로 처져서 눈 위에 오줌을 누던 궁녀들은 행렬로 돌아오지 않았다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">쥐를 물었을 때 <q>입안에 쥐 피가 번졌고</q>.</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>암세포가 녹아 나와서 복수는 걸쭉했다.</q> / 놀이공원의 늙은 조랑말 <q>말은 혈관의 표본처럼 보였다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>몸은 명분이나 체면과 상관없이 먹고 싸고 아프고 죽는다. 생리를 적으면 인물이 이념에서 몸으로 내려온다(<a class="code" href="#P3">P3</a>·<a class="code" href="#P5">P5</a>). 건조하게 써야 하는 까닭은 형용사를 붙이는 순간 그것이 서술자의 판단이 되기 때문이다(<a class="code" href="#P1">P1</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>명분, 권력, 감상이 커지는 대목 바로 옆에 놓는다. 임금의 피난 행렬 옆의 궁녀 오줌, 황제가 말의 똥구멍을 살피는 장면, 아들이 아버지의 밑을 닦는 장면이 그렇다.</p></div></article>
+<article class="rule l-device" id="D8" data-layer="device"><header class="rule-head"><span class="rule-code">D8</span><h3>환청·환영·이미지를 반복해 모티프로 삼는다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P3">P3</a></div></header><p class="lead">한 번 나온 감각 이미지를 작품 곳곳에서 되풀이해 인물의 내면을 대신 보여 준다. 되풀이될 때마다 설명은 붙지 않는다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">적선의 노 젓는 환청 <q>사각사각사각</q>(5회).</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">임금의 말 <q>경은 늘 내 가까이 있으니 군율이 쉽게 닿겠구나……</q>가 장면을 건너 다시 울린다.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>컹컹</q>(10회)과 <q>우우우우</q>. 팔려 가는 어미가 마을을 향해, 주인의 관과 무덤을 향해 보리가 같은 소리로 짖는다. <q>나는 목울대를 하늘로 치켜세우고 우우우우 울었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">아버지의 턱 밑이 <q>뭍으로 끌어올려진 물고기의 아가미처럼</q> 보이는 이미지(<q>아가미</q> 15회)가 이발소, 생물 시간, GOP로 이어진다.</span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>내면을 설명하는 대신 같은 감각을 되돌려 보내면 독자가 그 의미를 스스로 쌓는다(<a class="code" href="#P1">P1</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>인물의 강박, 상처, 끊을 수 없는 관계를 다룰 때. 한 작품에 한두 개만 쓴다.</p></div></article>
+<article class="rule l-surface" id="D9" data-layer="surface"><header class="rule-head"><span class="rule-code">D9</span><h3>비유는 짧고 사물적이다</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P5">P5</a></div></header><p class="lead"><q>처럼</q>은 자주 쓰지만(『개』 1만 자당 10회, 『칼의 노래』 6.6회) 비유의 대상은 손에 잡히는 사물이다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">나루터가 <q>어린애 팔목처럼 가늘게 강물 쪽으로 뻗어나간 돌무더기였는데</q>.</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>총안으로 내다보이는 산야는 두부모를 잘라 놓은 듯 네 귀가 반듯했다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>새까만 구두약을 칠해놓은 것처럼 윤기가 흐른다.</q> / 악돌이의 <q>송곳니는 낚싯바늘처럼 구부러져서 박히면 헤어나기 어려웠다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>아버지의 사체는 태아처럼 보였다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>관념에 견주는 비유는 대상을 미화하거나 막연하게 만든다. 사물 비유는 감각의 크기와 모양을 정확하게 하는 도구다(<a class="code" href="#P5">P5</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>숫자나 이름으로 잴 수 없는 감각을 전할 때만. <q>~처럼</q>의 개수를 늘리는 것은 목표가 아니다.</p></div></article></section>
+<section class="sec sec-3 rules" id="s3"><header class="sec-head"><span class="sec-n">03</span><div><h2>설명 규칙</h2><p class="sec-sub">E</p></div></header><p>여기서 '설명'은 사물·제도·행위의 원리를 단정적으로 서술하는 부분이다.</p>
+<article class="rule l-core" id="E1" data-layer="core"><header class="rule-head"><span class="rule-code">E1</span><h3>원리를 단정형으로 선언한다</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P4">P4</a></div></header><p class="lead"><q>~인 것 같다</q>로 흐리지 않는다. 원리는 판결문처럼 끊어 말한다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>포구는 안전한 곳이 아니었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>횃불은 앞을 밝혀주지만 적의 표적이 되기도 하는 것이므로 대군을 몰아 야습하는 보병의 전위에서 잠깐씩만 쓰는 것이고</q>.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>구부러진 길에서는 빠르게 달릴 수 없다.</q> / <q>개들은 엉키지 않으면 싸울 수가 없다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마동수의 생애에 특기할 만한 것은 없다.</q> / <q>마동수의 암은 인체에 기생하지만 인체와는 별도로 독립되어 있었다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>확인된 사실 앞에서 머뭇거리지 않는 것이 앎과 모름을 가르는 태도다(<a class="code" href="#P4">P4</a>). 단정하는 어조가 세계의 냉정함을 그대로 옮긴다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>사물, 제도, 몸, 공간의 원리를 말할 때. 다른 사람의 속마음이나 보지 못한 일은 단정하지 않는다(<a class="code" href="#E7">E7</a>).</p></div></article>
+<article class="rule l-core" id="E2" data-layer="core"><header class="rule-head"><span class="rule-code">E2</span><h3>제도·절차·셈법은 행정 문서처럼 적는다</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P2">P2</a></div></header><p class="lead">감정이 가장 클 법한 대목에서 오히려 행정과 셈법의 언어를 쓴다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>잘려진 머리와 코는 소금에 절여져 상부에 바쳐졌다. 그것이 전과의 증거물이었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">배급 <q>하루 네 홉에서 쌀을 반으로 줄이고 나머지 반은 찧지 않은 겉보리로 내주었다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">수몰 마을의 보상 <q>아무런 주인도 아니었기 때문에 아무것도 받을 것이 없었다.</q> / 주인이 바다에 빠져 죽은 뒤 <q>배를 건져 올리는 데 드는 인건비와 장비사용료가 뱃값보다 훨씬 더 비쌌다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">아버지의 죽음을 보고하자 당직사관은 <q>귀대하면 사망신고서 사본, 사망진단서 사본을 제출하고 대대장의 후결을 받으라고</q> 말한다. / 오장춘의 죽음 <q>오장춘의 죽음은, 신문에 1단짜리 기사로 보도되었다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>제도와 셈법이 사람을 다루는 방식 자체가 비정하다. 행정의 언어를 그대로 옮기면 서술자가 비판하지 않아도 비판이 된다(<a class="code" href="#P1">P1</a>). 사람의 죽음이 서류와 비용으로 처리되는 모습이 세계의 무심함을 보여 준다(<a class="code" href="#P2">P2</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>죽음, 이별, 가난, 처벌, 보상처럼 감정이 큰 사건을 다룰 때. 감정이 클수록 숫자와 절차로 쓴다.</p></div></article>
+<article class="rule l-core" id="E3" data-layer="core"><header class="rule-head"><span class="rule-code">E3</span><h3>원리 → 결과 → 비정한 귀결</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P2">P2</a></div></header><p class="lead">원리를 말한 뒤 그 원리가 사람에게 무엇을 하는지 끝까지 따라간다. 마지막 문장이 가장 짧고 가장 차갑다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>잘라낸 머리와 코에서 적과 아군을 식별할 수는 없었다. 그래서 바다에서는 모든 적들이 모든 적들의 머리를 자르고 코를 베었다.</q> 이어서 <q>피난민들은 다만 얼굴 가운데 코가 있기 때문에 죽었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>돌을 써야 할 날은 적이 정하게 될 것이온데 … 돌을 써야 할 날이 온다면 돌을 쓸 필요가 없을 터이니</q>.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">인건비가 뱃값보다 비싸다는 셈법(<a class="code" href="#E2">E2</a>) 뒤에 <q>수심이 깊지는 않았지만 잠수부들은 주인님의 배를 건져 올리지 않았다.</q> / 먼 냄새의 원리 <q>먼 냄새는 냄새의 알맹이가 엉성해서 넓게 퍼져서 다가오고</q> 뒤에 어린 개는 그 냄새를 좇아 <q>종일 달리고 또 달렸다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">마동수의 암은 <q>몸이 무너져갈수록 암의 세력은 번성했고</q>, 끝내 숨이 끊어진 뒤에도 <q>사흘 동안 살아 있다가 사체가 매장될 때 소멸했다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>원리를 끝까지 따라가면 부조리가 저절로 드러난다. 서술자가 분노하거나 탄식할 필요가 없다(<a class="code" href="#P1">P1</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>설명 문단의 뼈대로 쓴다. 이 순서를 지키면 <q>그래서/그러므로</q> 없이도 문장이 이어진다(<a class="code" href="#S3">S3</a>).</p></div></article>
+<article class="rule l-surface" id="E4" data-layer="surface"><header class="rule-head"><span class="rule-code">E4</span><h3>아포리즘 한 줄로 문단을 닫는다</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P2">P2</a></div></header><p class="lead">설명이 쌓인 끝에 세계에 대한 짧은 판정이 온다. <q>본래</q>가 이 자리에 자주 선다(칼 9회, 남한 13회, 개 5회, 공터 3회).</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>이 세상에 위로란 본래 없다는 것을 나는 알았다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>군병들은 언 발을 굴렀으나, 산야에는 본래 추위나 더위가 없었다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>개들은 언제나 지나간 슬픔을 슬퍼하기보다는 닥쳐오는 기쁨을 기뻐한다.</q> / 무덤을 판 개에게 할머니 <q>—이놈아. 무덤을 파도 살아나지는 못해. 그게 죽는 거여.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">당직사관 <q>여름은 덥고 겨울은 춥다. 이것은 본래 그런 것이다.</q> / 늙은 형사 <q>—가족이 연루된 사건은 본래 수사가 어렵소.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>쌓인 사실을 한 줄로 거둬들여 세계의 무심한 질서를 보여 준다(<a class="code" href="#P2">P2</a>). 『공터에서』와 『개』에서는 아포리즘이 서술자보다 인물(당직사관, 형사, 할머니)의 입에서 나오는 경우가 많다. 현대 배경일수록 판정을 인물의 대사에 맡긴다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>사실이 충분히 쌓인 뒤에만. 장 하나에 한두 번. 근거 없이 쓰면 설교나 격언집이 된다. 겉모양만 흉내 내기 가장 쉬운 규칙이므로 조심한다.</p></div></article>
+<article class="rule l-device" id="E5" data-layer="device"><header class="rule-head"><span class="rule-code">E5</span><h3>사람과 사건을 기록처럼 소개한다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P5">P5</a></div></header><p class="lead">인물을 처음 들이거나 떠나보낼 때 성격 묘사 대신 이름, 날짜, 장소, 숫자, 남은 물건으로 적는다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>나는 정유년 4월 초하룻날 서울 의금부에서 풀려났다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">칸의 소개 <q>칸은 구운 오리고기에서 뼈를 발라내며 군대의 진퇴를 결정했고</q>.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">주인의 배 <q>20마력짜리 2기통 엔진으로 동력을 앉혔는데, 굴뚝이 통통거리며 푸른 고리연기를 토해냈다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마동수(馬東守)는 1979년 12월 20일 서울 서대문구 산외동 산18번지에서 죽었다.</q> / 오장춘이 죽은 여관방 <q>방 안에는 타버린 연탄재가 식어 있었고 소주병 두 개가 쓰러져 있었다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>인물을 형용사로 규정하지 않고 기록으로 세우면 서술자가 그 사람을 평가하지 않게 된다(<a class="code" href="#P1">P1</a>). 기록은 꾸미지 않는다(<a class="code" href="#P5">P5</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>인물의 첫 등장과 죽음. 현대 배경(『공터에서』)에서 특히 많이 쓴다.</p></div></article>
+<article class="rule l-device" id="E6" data-layer="device"><header class="rule-head"><span class="rule-code">E6</span><h3>대칭과 역설로 사태의 구조를 보여 준다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P4">P4</a></div></header><p class="lead">같은 문형을 뒤집어 세워 상황에 출구가 없다는 것을 문장 구조로 보여 준다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>내가 적을 이길 수 있는 조건들은 적에게 있을 것이었고, 적이 나를 이길 수 있는 조건들은 나에게 있을 것이었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>서울을 버려야 서울로 돌아올 수 있다는 말은 그럴듯하게 들렸다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>지나간 날들은 개를 사로잡지 못하고, 개는 닥쳐올 날들의 추위와 배고픔을 근심하지 않는다.</q> / 주인이 죽은 뒤 <q>죽음을 이길 수는 없었지만, 인정할 수도 없었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>아버지는 왜 집에 오지 않는 것일까? 아니다. 아버지는 왜 집에 오는 것일까?</q> / 아버지의 부고를 받은 형 <q>멀어서 갈 수 없겠구나, 멀어서 가지 않아도 되겠구나…….</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>딜레마와 양가감정을 해설하지 않고 문장의 짜임으로 보여 준다. 두 쪽 모두 맞는 말이라 서술자가 어느 쪽인지 판정하지 않는다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>인물이 두 길 사이에서 멈춰 있을 때. 말장난처럼 들리지 않도록 장면당 한 번만.</p></div></article>
+<article class="rule l-core" id="E7" data-layer="core"><header class="rule-head"><span class="rule-code">E7</span><h3>짐작은 '~ㄹ 것이었다 / ~모양이었다 / ~듯했다'로, 모름은 모른다고</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P4">P4</a></div></header><p class="lead">『칼의 노래』에서 <q>~ㄹ 것이었다</q>가 1만 자당 2.7회로 가장 잦다. <q>알 수 없었다</q>는 네 권 모두에 고르게 나온다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>적들은 거기서 겨울을 날 모양이었다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">산성 안 군사들은 지나간 적들이 일으킨 <q>먼지를 바라보고 있을 터였다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>그 무서운 오줌의 주인은 이 마을 개가 아니라 다른 마을에 살면서 흰순이네 마을까지 휘젓고 다니는 모양이었다.</q> / 주인의 장례 뒤 <q>나는 모른다. 주인님은 죽어서 땅 밑으로 들어갔지만 나는 죽음이 무엇인지 알 수가 없다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>산외동 산18번지 산비탈 바람받이에서 아버지의 마른 나무토막 같은 육신이 남은 숨을 쉬고 있을 것이었다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>서술자는 남의 속을 다 아는 척하지 않는다(<a class="code" href="#P4">P4</a>). 모른다고 인정하는 문장이 있기 때문에 단정하는 문장(<a class="code" href="#E1">E1</a>)이 믿을 만해진다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>다른 사람의 마음, 보지 못한 사건, 앞으로 일어날 일을 쓸 때. 1인칭 화자일수록 엄격하게 지킨다.</p></div></article></section>
+<section class="sec sec-4 rules" id="s4"><header class="sec-head"><span class="sec-n">04</span><div><h2>문장과 리듬 규칙</h2><p class="sec-sub">S</p></div></header><p>이 장의 규칙은 모두 겉모양 규칙이다. 원리(1절)와 함께 쓸 때만 김훈식이 된다.</p>
+<article class="rule l-surface" id="S1" data-layer="surface"><header class="rule-head"><span class="rule-code">S1</span><h3>단문은 사실과 판정에, 긴 문장은 흐름과 맴도는 생각에</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P4">P4</a></div></header><p class="lead">문장 길이 중앙값(대사 포함, 공백 포함 글자 수): 칼 28자, 남한 26자, 공터 26자, 개 34자. 20자 이하 짧은 문장이 전체의 21~38%다.</p>
+<p>단문의 예:</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>끼니때는 어김없이 돌아왔다. 지나간 모든 끼니는 닥쳐올 단 한 끼니 앞에서 무효였다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>행렬은 수구문으로 도성을 빠져나와 송파나루에서 강을 건넜다. 강은 얼어 있었다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>주인님은 두 번 내리찍는 일이 없었다. 정확하게 한 방에 두 쪽이었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마동수는 혼자서 죽었다.</q></span></li></ul>
+<p>긴 문장의 예:</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">환청이 몰려오는 대목 <q>아마도 식은땀의 한기에서 깨어나는 새벽의 환청이 밤이나 낮이나 나를 따라다니는 모양이었다.</q>처럼 환청과 바람을 다룰 때 문장이 길어진다.</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">성의 지세를 설명하는 대목 <q>성벽 밖은 산줄기가 가파르고 첩첩해서 적의 기병이 말을 몰아 다가올 수 없으며, 성 둘레는 가파르게 출렁거리며 길게 휘어져 갑자기 포위할 수가 없었다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">마르는 장작의 향기 <q>깊은 땅 밑을 흐르는 맑은 물의 향기와 산속에서 부는 바람의 향기와 가을 햇빛의 향기를 나무가 모두 빨아들여서 다시 토해냈다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">아버지의 죽음을 받아들이지 못하는 마장세의 생각은 200자가 넘는 한 문장(문장 길이 중앙값의 여덟 배)으로 맴돌다가 <q>생각이 되어지지가 않았다.</q>로 끝난다.</span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>단문은 사실 하나를 판정처럼 끊어서 앎을 단단하게 만든다(<a class="code" href="#P4">P4</a>). 긴 문장은 끊을 수 없는 것, 곧 풍경의 흐름, 감각의 겹침, 결론에 이르지 못하는 생각을 담는다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>행동, 사실, 판정은 단문. 풍경, 냄새의 층, 환청·환영, 맴도는 생각은 긴 문장. 단문만 쓰면 전보문이 된다(1-3절).</p></div></article>
+<article class="rule l-surface" id="S2" data-layer="surface"><header class="rule-head"><span class="rule-code">S2</span><h3>대명사 대신 주어를 되풀이한다</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P5">P5</a></div></header><p class="lead"><q>그녀</q>는 네 권 전체에서 0회다. 여성 인물은 <q>그 여자</q>(칼 31회, 공터 11회)나 이름, 직함으로 부른다. 한 문단 안에서 같은 주어가 문장마다 되풀이된다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>그 여자의 몸은 더러웠다. 그 여자는 쉽게 수줍음에서 벗어났다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>최명길이 붓을 들었다. 최명길이 붓을 적셨다. 최명길이 젖은 붓을 종이 위로 가져갔다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>주인님은 늘 혼자서 배를 몰고 바다로 나아갔다.</q> 이어지는 문단에서도 <q>주인님은</q>, <q>주인님의 배는</q>이 문장마다 되풀이된다.</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마동수는 암 판정을 받은 지 3년 만에 죽었다.</q> 첫 장 내내 <q>마동수는</q>, <q>마동수의</q>가 반복된다.</span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>대명사는 인물과의 거리를 흐린다. 이름을 되풀이하면 인물이 사물처럼 단단해지고 서술이 건조해진다. <q>그녀</q>는 번역투다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>늘. 1인칭에서는 <q>나는</q>을 되풀이한다(칼: <q>나는 보았으므로 안다.</q>, 개: <q>나는 모른다.</q>).</p></div></article>
+<article class="rule l-surface" id="S3" data-layer="surface"><header class="rule-head"><span class="rule-code">S3</span><h3>접속어를 아낀다</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P1">P1</a></div></header><p class="lead"><q>그러나</q>는 1만 자당 0.1~1.8회, <q>하지만</q>은 0~1.2회다. 문장은 접속어 없이 맞붙는다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>나는 살기를 바라지 않았다. 죽음은 절벽처럼 확실했다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>조정은 얼어붙었다. 아무도 두려움을 말하지 않았다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>할머니는 늘 쪼그리고 앉아서 일했다.</q> 뒤로 접속어 없이 할머니의 동작만 이어진다.</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마차세는 아버지의 주검 위에 홑이불을 덮고 큰길로 내려왔다. 마차세는 공중전화로 부대에 아버지의 죽음을 보고했다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>접속어는 서술자가 문장 사이의 인과를 해석해 주는 말이다. 빼면 독자가 관계를 잇는다(<a class="code" href="#P1">P1</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>서사와 묘사 문단. 『개』처럼 원리를 차근차근 설명하는 구어체에서는 <q>그래서</q>가 1만 자당 4회로 많다. 설명 문단에서 원리와 결과를 이을 때는 써도 된다(<a class="code" href="#E3">E3</a>).</p></div></article>
+<article class="rule l-surface" id="S4" data-layer="surface"><header class="rule-head"><span class="rule-code">S4</span><h3>서술은 과거형, 원리만 현재형</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P4">P4</a></div></header><p class="lead">서사는 <q>~었다</q>로 일관한다. 시간을 넘는 원리와 일반론에만 현재형(<q>~다</q>, <q>~것이다</q>)을 쓴다. 현재형 단정은 『개』에서 가장 많고(1만 자당 4.3회), 『공터에서』와 『남한산성』에서 가장 적다(0.4회).</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>나는 안다. 총알은 깊다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">서술은 과거형이고, 현재형 판정은 주로 대사로 나온다. <q>- 적들이 이미 청천강을 건넜으므로 그것은 괴이하지 않다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>개는 신발을 신지 않기 때문에 어쩔 수가 없는 일이다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마동수의 생애에 특기할 만한 것은 없다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>과거형은 이미 일어난 일의 기록이고, 현재형은 시간을 넘는 원리다. 시제가 사실과 원리를 가르는 표지가 된다(<a class="code" href="#P4">P4</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>1인칭 회고에서도 같다. 현재형이 섞이면 그 문장은 원리 선언으로 읽힌다는 점을 알고 쓴다.</p></div></article>
+<article class="rule l-surface" id="S5" data-layer="surface"><header class="rule-head"><span class="rule-code">S5</span><h3>같은 동사를 되풀이해 리듬을 만든다</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P2">P2</a></div></header><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>임금은 슬피 울었고, 오래오래 울었다.</q> 「언어와 울음」 장 한 장에서 <q>울었</q>이 서른 번 넘게 나온다.</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>적들은 산성을 공격하지 않았고 읍성을 점령하지 않았다. 길에서 머물지 않았고 뒤를 돌아보지 않았으며 우회하지 않았다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">장작 패는 주인을 두고 <q>한 방에 두 쪽이었다.</q>가 한 대목에서 되풀이된다.</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마동수는 기침을 쿨럭이며 왔다가 하룻밤을 자고 나서 기침을 쿨럭이며 갔다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>같은 동사가 반복되면 행위가 의례나 관성이 된다. 임금의 울음은 정무가 되고, 아버지의 방문은 기침 소리 하나로 굳는다. 사람의 행위가 반복의 틀에 갇힌 모습이 드러난다.</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>행위의 공허함이나 끈질김, 습관을 보여 줄 때.</p></div></article>
+<article class="rule l-surface" id="S6" data-layer="surface"><header class="rule-head"><span class="rule-code">S6</span><h3>장면은 짧은 사실 한 문장으로 끝낸다</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P1">P1</a></div></header><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>깊은 겨울이었다.</q> / <q>정유년 겨울은 지나갔다.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>임금은 남한산성에 있었다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>이게 내가 태어난 마을이다.</q> / 장 끝 <q>우물가 감나무 가지에서 주인아주머니의 마른 물고기 몇 마리가 분홍빛 속살로 저녁 햇살을 받고 있었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>마동수는 모로 누워서 혼자서 죽었다.</q> / 박상희의 편지가 <q>‘수취인 불명’의 스탬프가 찍혀서 되돌아왔다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>감정을 정리하는 문장 대신 사실로 끊으면 여운과 판단이 독자에게 남는다(<a class="code" href="#P1">P1</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>장면과 장의 끝. <a class="code" href="#D2">D2</a>(바깥 풍경)와 겹치는 경우가 많다.</p></div></article>
+<article class="rule l-surface" id="S7" data-layer="surface"><header class="rule-head"><span class="rule-code">S7</span><h3>낱말은 그 세계의 정확한 용어로</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span><a class="pchip" href="#P5">P5</a></div></header><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">격군, 협선, 장계, 백의종군.</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body">비변사, 관량사, 성첩, 근총안. 한자를 괄호나 공백으로 병기한다.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>정치망 어장은 바다라기보다는 밭에 가까웠다.</q> / <q>물풍선은 낙하산처럼 생긴 바람자루인데</q>. 어부의 용어를 쓰고 짧은 정의를 붙인다.</span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">GOP, 휴가증, 복수(腹水), 섬망(譫妄), 불능범(不能犯). 한자를 괄호로 병기한다.</span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>현장 사람이 쓰는 말은 그 세계의 질서를 해설 없이 들여온다(<a class="code" href="#P5">P5</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>직업, 제도, 공간이 서사에 들어올 때. 낯선 용어는 『개』처럼 한 문장으로 정의하고 넘어간다.</p></div></article></section>
+<section class="sec sec-5 rules" id="s5"><header class="sec-head"><span class="sec-n">05</span><div><h2>대화 규칙</h2><p class="sec-sub">T</p></div></header>
+<article class="rule l-device" id="T1" data-layer="device"><header class="rule-head"><span class="rule-code">T1</span><h3>대사는 짧고, 대사 뒤에 감정 해설이 없다</h3><div class="rule-meta"><span class="layer-badge lb-device">장치</span><a class="pchip" href="#P1">P1</a><a class="pchip" href="#P5">P5</a></div></header><ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body"><q>—먹어라.</q> / <q>—……네.</q> 이 짧은 주고받기 사이에 <q>여진은 숟가락을 들지 않았다.</q> 같은 동작만 끼어든다.</span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>- 그렇겠구나.</q> / <q>- …….</q>. 말 없는 대답(- ……)도 하나의 대사로 놓인다.</span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body">장례에서 사내들의 대사가 이어진 뒤 <q>사내들은 술을 마셔가며 그렇게 하나 마나 한 말들을 지껄이고 있었다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body"><q>—신기하구나. 니가.</q> / 오장춘 <q>—먹어, 니미. 달걀이네.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>인물은 감정을 말로 다 하지 못한다. 짧은 대사와 동작이 그 빈자리를 보여 준다(<a class="code" href="#P1">P1</a>). 대사가 길게 이어질 때는 말의 공허함을 보여 주려는 것이다(<a class="code" href="#P5">P5</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>감정이 큰 대화일수록 짧게. 여러 사람의 긴 푸념이나 상소는 '말의 공허'를 보여 줄 때만 쓰고, 끝에 서술이 그 말의 무게를 판정한다.</p></div></article>
+<article class="rule l-core" id="T2" data-layer="core"><header class="rule-head"><span class="rule-code">T2</span><h3>말과 속뜻의 어긋남을 서술이 짚는다</h3><div class="rule-meta"><span class="layer-badge lb-core">핵심 규칙</span><a class="pchip" href="#P4">P4</a><a class="pchip" href="#P5">P5</a></div></header><p class="lead">인물은 속마음을 말하지 않고, 서술자는 감정이 아니라 그 말이 실제로 무엇을 하고 있는지(누구를 겨누는지, 무엇을 피하는지) 판독한다.</p>
+<ul class="examples"><li class="ex" data-book="kal"><span class="book-tag b-kal">칼의 노래</span><span class="ex-body">권율의 <q>자네 무슨 방책이 없겠나?</q>를 두고 <q>그것이 그의 방책이었을까.</q></span></li><li class="ex" data-book="nam"><span class="book-tag b-nam">남한산성</span><span class="ex-body"><q>임금의 말투는 장님이 벽을 더듬는 듯했다. 임금은 먼 곳을 더듬어서 복심을 찔렀다.</q></span></li><li class="ex" data-book="gae"><span class="book-tag b-gae">개</span><span class="ex-body"><q>주인할아버지는 팔려 가는 엄마를 욕했는데, 욕지거리도 슬프게 들렸다.</q></span></li><li class="ex" data-book="gong"><span class="book-tag b-gong">공터에서</span><span class="ex-body">아버지의 <q>미안허다</q>를 두고 <q>그 미안하다는 말은 자신의 밑에 와 닿는 아들의 시선을 힘겨워하고 있었다.</q> / 형사에 대해 <q>형사의 말투는 마차세를 참고인이 아니라 피의자로 몰아가고 있었다.</q></span></li></ul>
+<div class="note n-why"><span class="note-label">왜</span><p>말은 속뜻을 숨긴다(<a class="code" href="#P5">P5</a>). 서술자가 감정을 이름 짓는 대신 말의 기능을 짚으면, 판단의 근거는 보여 주되 결론은 독자에게 남는다. 확신할 수 없으면 의문형으로 남긴다(<q>그것이 그의 방책이었을까.</q>)(<a class="code" href="#P4">P4</a>).</p></div>
+<div class="note n-when"><span class="note-label">언제</span><p>권력 관계(왕과 신하, 상사와 부하, 형사와 참고인), 가족 사이의 대화.</p></div></article>
+<article class="rule l-surface" id="T3" data-layer="surface"><header class="rule-head"><span class="rule-code">T3</span><h3>표기</h3><div class="rule-meta"><span class="layer-badge lb-surface">겉모양 규칙</span></div></header><p class="lead">대사 앞에는 줄표를 쓴다(칼·개·공터는 <q>—</q>, 남한산성은 <q>- </q>). 속으로 하는 말은 따옴표 없이 서술 문장 안에 넣고 말줄임표로 흘린다. 예: 『공터에서』 <q>아, 끝났구나, 끝났어……. 마차세 상병은 긴 한숨을 내쉬었다.</q></p></article></section>
+<section class="sec sec-6" id="s6"><header class="sec-head"><span class="sec-n">06</span><div><h2>작품별 차이</h2></div></header><div class="tbl-wrap"><table class="compare"><thead><tr><th></th><th class="th-kal">칼의 노래</th><th class="th-nam">남한산성</th><th class="th-gae">개</th><th class="th-gong">공터에서</th></tr></thead><tbody><tr><td>시점</td><td>1인칭 '나'(이순신)</td><td>3인칭, 여러 인물을 옮겨 다님</td><td>1인칭 동물 화자 '나'(진돗개 보리)</td><td>3인칭, 이름으로 부르는 가족 서사</td></tr><tr><td>가장 두드러진 원리</td><td><a class="code" href="#P3">P3</a> 몸, <a class="code" href="#P4">P4</a> 앎/모름</td><td><a class="code" href="#P5">P5</a> 말의 의심, <a class="code" href="#P2">P2</a> 무심한 세계</td><td><a class="code" href="#P3">P3</a> 감각, <a class="code" href="#P4">P4</a> 모름의 인정</td><td><a class="code" href="#P1">P1</a> 기록과 셈법, <a class="code" href="#P2">P2</a> 무심한 세계</td></tr><tr><td>주 감각</td><td>몸의 통증, 식은땀, 쇠비린내, 환청</td><td>추위, 눈, 말(言)의 소리, 침묵</td><td>냄새의 거리와 밀도, 수염의 촉각</td><td>생리(병, 배설, 출산), 냄새, 빛</td></tr><tr><td>설명의 대상</td><td>전쟁의 셈법(머리·코의 전과), 끼니</td><td>제도, 배급, 성곽, 외교 문서</td><td>개의 몸(코·수염·오줌), 어장과 보상의 셈법</td><td>연월일, 주소, 군대 규정, 수사 기록, 돈</td></tr><tr><td>문장 결</td><td>단언, 짧은 문장, <q>나는 안다</q></td><td>장중한 단문, 왕과 신하의 고어체 대사</td><td>구어체, 자랑과 유머, 현재형 일반화</td><td>건조한 보고체, 비속어가 섞인 대사</td></tr><tr><td>1만 자당 <q>냄새</q></td><td>2.0</td><td>1.9</td><td>21.0</td><td>3.9</td></tr><tr><td>문장 중앙값</td><td>28자</td><td>26자</td><td>34자</td><td>26자</td></tr></tbody></table></div>
+<div class="book-cards">
+<article class="book-card bc-kal"><header><span class="book-tag b-kal">칼의 노래</span><h3>1인칭, 내면을 감각으로 드러낸다</h3></header><ul><li>화자는 마음을 말하지 않고 몸의 상태를 보고한다. <q>나는 칼을 코에 대고 쇠비린내를 몸속 깊이 빨아넣었다.</q></li><li>앎과 모름을 분명히 가른다. <q>나는 보았으므로 안다.</q> / <q>나는 적의 적의敵意의 근거를 알 수 없었고</q>.</li><li class="take"><span class="mini-label">가져갈 것</span>1인칭 '나'의 감정 문장을 몸의 보고와 앎/모름의 단언으로 바꾸는 방식.</li></ul></article>
+<article class="book-card bc-nam"><header><span class="book-tag b-nam">남한산성</span><h3>3인칭, 제도·말·사물에 대한 설명이 많다</h3></header><ul><li>말(言) 자체를 사물처럼 다룬다. 말이 뱀이 되고 산맥이 되어 시야를 가린다.</li><li>임금은 표정 없이 짧은 말로만 드러나고, 서술은 그 말이 겨누는 곳을 해석한다(<a class="code" href="#T2">T2</a>).</li><li>성곽 구조, 배급량, 돌의 크기(<q>어른 주먹이나 어린애 머리통만 한 돌</q>)처럼 실무의 디테일을 길게 설명한다.</li><li class="take"><span class="mini-label">가져갈 것</span>공간과 규칙을 설명문으로 세워 두고 인물을 그 안에 놓는 방식.</li></ul></article>
+<article class="book-card bc-gae"><header><span class="book-tag b-gae">개</span><h3>동물의 감각(냄새·소리)으로 세계를 본다</h3></header><ul><li>세계를 냄새로 분류하고 체계화한다(먼 냄새/가까운 냄새, 알맹이가 엉성한 냄새/촘촘한 냄새).</li><li>사람의 감정을 몸으로 판독한다. <q>어깨를 늘어뜨리고 고개를 숙이고 눈동자의 초점이 흐려지면 그건 사람들이 슬퍼하고 있는 거다.</q></li><li>네 권 가운데 감정어가 가장 많이 남아 있는 책이다(<q>슬픔</q> 20회). 그래도 감정어는 냄새와 몸에 붙어서 나온다. <q>그 냄새는 모두 사랑받기를 목말라하는 냄새였다.</q></li><li>모름을 정직하게 인정한다. 주인의 죽음 앞에서 보리는 <q>죽음이 무엇인지를 알았기 때문에 운 것이 아니라, 그것이 대체 무엇인지를 도무지 알 길이 없어서 울었다.</q></li><li class="take"><span class="mini-label">가져갈 것</span>낯선 몸의 시점에서 익숙한 사물을 처음 보듯 감각으로 다시 분류하는 방식, 모르는 것을 모른다고 말하는 1인칭.</li></ul></article>
+<article class="book-card bc-gong"><header><span class="book-tag b-gong">공터에서</span><h3>현대 배경에서의 건조한 묘사</h3></header><ul><li>인물의 생몰, 주소, 나이, 계급, 금액을 보고서처럼 먼저 놓는다(<a class="code" href="#E5">E5</a>). 죽음도 기록으로 처리한다(신문 1단 기사, 여관방의 연탄재와 소주병).</li><li>현대의 생활 사물(연탄, 우동, 소주, 휴가증, 국제전화, 오토바이 장화, 폴라로이드 사진)을 정확한 이름으로 쓴다.</li><li>꿈과 임종의 환영도 감정어 없이 감각과 풍경으로 쓴다. 마동수의 마지막 의식이 <q>썰물에 실려서 먼 수평선 너머로 흘러갔다가 다시 밀물에 얹혀서</q> 돌아오는 대목이 그 예다.</li><li>대사에는 비속어와 사투리가 그대로 들어간다(<q>니미</q>, <q>미안허다</q>).</li><li class="take"><span class="mini-label">가져갈 것</span>현대 배경, 꿈과 환상 장면을 건조한 감각 문장으로 처리하는 방식.</li></ul></article>
+</div></section>
+<section class="sec sec-7" id="s7"><header class="sec-head"><span class="sec-n">07</span><div><h2>김훈식이 아닌 것</h2><p class="sec-sub">피할 것</p></div></header><div class="tbl-wrap"><table class=""><thead><tr><th>피할 것</th><th>근거</th><th>바꾸는 방향</th></tr></thead><tbody><tr><td><q>슬펐다/기뻤다/외로웠다/설렜다/행복했다</q></td><td>4권 전체에서 <q>슬펐다</q> 2회, <q>기뻤다·그리웠다</q> 0회</td><td><a class="code" href="#D1">D1</a> 몸의 반응. 꼭 써야 하면 <q>[사물]이 [감정]했다</q> 꼴로 한 번</td></tr><tr><td>감정어 뒤에 그 감정을 풀어 쓰는 해설</td><td>네 권 모두 감정어 뒤에는 행동이나 사실이 온다</td><td><a class="code" href="#D1">D1</a> 형식, <a class="code" href="#S6">S6</a></td></tr><tr><td><q>그녀</q></td><td>4권 전체 0회</td><td><q>그 여자</q>, 이름, 직함 반복 (<a class="code" href="#S2">S2</a>)</td></tr><tr><td><q>~라는 느낌이 들었다</q>, <q>~라는 생각이 들었다</q></td><td>4권 전체 합쳐 6회</td><td><q>~ㄹ 것이었다</q>, <q>~듯했다</q>, 또는 생각의 내용을 단언으로 (<a class="code" href="#E7">E7</a>)</td></tr><tr><td><q>너무나, 정말, 매우</q> 같은 강조 부사</td><td>권마다 0~7회</td><td>강조하지 말고 물목과 숫자로 (<a class="code" href="#D6">D6</a>, <a class="code" href="#E2">E2</a>)</td></tr><tr><td><q>그런데, 그러자, 그리고 나서</q> 같은 이음말</td><td><q>하지만</q> 칼 0회</td><td>문장 순서로 인과를 만든다 (<a class="code" href="#S3">S3</a>, <a class="code" href="#E3">E3</a>)</td></tr><tr><td>관형절을 셋 넘게 겹친 긴 수식</td><td>긴 문장도 쉼표로 동사를 잇지 꾸밈말을 쌓지 않는다</td><td>동사 중심의 연결로 (<a class="code" href="#S1">S1</a>)</td></tr><tr><td>번역투: <q>~에 의해</q>, <q>~를 가지다</q>, <q>~하는 중이었다</q>, <q>~적(的)</q> 남용, <q>~에 있어서</q></td><td></td><td>능동 주어, 구체 동사</td></tr><tr><td>대사 뒤 감정 해설(<q>그가 화난 목소리로 말했다</q>)</td><td></td><td>대사 뒤에 동작이나 사물 한 줄 (<a class="code" href="#T1">T1</a>), 말의 기능 판독 (<a class="code" href="#T2">T2</a>)</td></tr><tr><td>관념에 견준 비유(<q>인상파의 화폭처럼</q>, <q>신비롭고 아름다운</q>)</td><td></td><td>손에 잡히는 사물에 견준다 (<a class="code" href="#D9">D9</a>)</td></tr><tr><td>근거 없이 붙인 격언</td><td></td><td>사실을 먼저 쌓고 마지막에 한 줄 (<a class="code" href="#E4">E4</a>)</td></tr></tbody></table></div></section>
+<section class="sec sec-8" id="s8"><header class="sec-head"><span class="sec-n">08</span><div><h2>바꿔 쓰기 연습</h2><p class="sec-sub">원문 인용이 아닌, 규칙 시연용 예문</p></div></header><p>같은 문장을 '겉모양만 흉내 낸 판'과 '원리까지 담은 판'으로 나란히 둔다.</p>
+<div class="practice">
+<article class="pr-card"><div class="pr-row pr-orig"><span class="mini-label">일반 문장</span><p>나는 그를 기다리며 초조하고 불안한 마음이 들었다.</p></div><div class="pr-row pr-bad"><span class="mini-label">겉모양만</span><p class="prose">나는 그를 기다렸다. 초조했다. 불안했다.</p><p class="pr-note"><a class="code" href="#S1">S1</a>만 적용. 감정어가 그대로 남아 김훈식이 아니다.</p></div><div class="pr-row pr-good"><span class="mini-label">원리까지</span><p class="prose">나는 시계를 보지 않았다. 찻잔 바닥에 남은 커피가 식어서 막이 앉았다. 문이 열릴 때마다 바람이 들어왔다.</p><p class="pr-tag">적용 <a class="code" href="#D1">D1</a>·<a class="code" href="#D6">D6</a>·<a class="code" href="#S1">S1</a> / <a class="code" href="#P1">P1</a>·<a class="code" href="#P3">P3</a></p></div></article>
+<article class="pr-card"><div class="pr-row pr-orig"><span class="mini-label">일반 문장</span><p>그녀는 너무나 슬퍼서 하염없이 울었다.</p></div><div class="pr-row pr-bad"><span class="mini-label">겉모양만</span><p class="prose">그 여자는 슬펐다. 그 여자는 울었다.</p><p class="pr-note"><a class="code" href="#S2">S2</a>만 적용.</p></div><div class="pr-row pr-good"><span class="mini-label">원리까지</span><p class="prose">그 여자는 울었다. 울음은 몸 안으로 밀어 넣어도 다시 밀려 나왔다. 창밖에서 비둘기 몇 마리가 난간을 따라 걸었다.</p><p class="pr-tag">적용 <a class="code" href="#S2">S2</a>·<a class="code" href="#D1">D1</a>·<a class="code" href="#D2">D2</a> / <a class="code" href="#P1">P1</a>·<a class="code" href="#P2">P2</a></p></div></article>
+<article class="pr-card"><div class="pr-row pr-orig"><span class="mini-label">일반 문장</span><p>호텔에는 많은 사람들이 있었는데, 그들은 서로에게 관심이 없어 보였다.</p></div><div class="pr-row pr-bad"><span class="mini-label">겉모양만</span><p class="prose">호텔에는 사람이 많았다. 본래 사람들은 서로에게 관심이 없다.</p><p class="pr-note"><a class="code" href="#E4">E4</a>만 적용. 근거 없는 격언이 된다.</p></div><div class="pr-row pr-good"><span class="mini-label">원리까지</span><p class="prose">호텔 로비는 서로 모르는 자들이 지나가는 자리였다. 모르는 자들은 부딪쳐도 사과하지 않았다. 사과는 아는 자들 사이의 일이었다.</p><p class="pr-tag">적용 <a class="code" href="#E1">E1</a>·<a class="code" href="#E3">E3</a>·<a class="code" href="#E4">E4</a> / <a class="code" href="#P2">P2</a>·<a class="code" href="#P4">P4</a></p></div></article>
+</div></section>
+<section class="sec sec-9" id="s9"><header class="sec-head"><span class="sec-n">09</span><div><h2>2단계(성민선 「약속장소」 재구성) 적용 메모</h2></div></header><p>「약속장소」는 1인칭 '나'의 꿈 같은 이동을 따라가는 현대 배경 소설이다. 네 권에서 각각 가져올 것은 다음과 같다.</p>
+<div class="apply-grid">
+<div class="apply-card bc-gong"><span class="book-tag b-gong">공터에서</span><p>현대의 공간과 사물(호텔, 엘리베이터, 거리, 간판)을 정확한 이름으로 쓰고, 꿈과 환영을 감정어 없이 감각과 풍경으로 처리하는 방식(<a class="code" href="#E5">E5</a>·<a class="code" href="#S7">S7</a>·<a class="code" href="#D2">D2</a>).</p></div>
+<div class="apply-card bc-kal"><span class="book-tag b-kal">칼의 노래</span><p>1인칭 '나'의 감정을 몸의 보고로 바꾸고, 아는 것과 모르는 것을 가르는 목소리(<a class="code" href="#D1">D1</a>·<a class="code" href="#E7">E7</a>).</p></div>
+<div class="apply-card bc-nam"><span class="book-tag b-nam">남한산성</span><p>호텔과 거리 같은 공간의 규칙을 설명문으로 세우는 방식(<a class="code" href="#E1">E1</a>·<a class="code" href="#E2">E2</a>·<a class="code" href="#E3">E3</a>).</p></div>
+<div class="apply-card bc-gae"><span class="book-tag b-gae">개</span><p>투명해지는 몸, 바람, 그림자들의 냄새처럼 낯선 몸의 감각을 분류하는 방식, <q>나는 모른다</q>를 정직하게 쓰는 1인칭(<a class="code" href="#D3">D3</a>·<a class="code" href="#E7">E7</a>).</p></div>
+</div>
+<ul><li>원작은 긴 연결문과 <q>~처럼</q>이 많은 만연체이고 감정어(<q>수치심이 몰려오기 시작했다</q>, <q>걱정이 되었고</q>)가 직접 나온다. 재구성의 핵심 작업은 ① 감정어를 몸과 사물로 바꾸기(<a class="code" href="#D1">D1</a>·<a class="code" href="#D2">D2</a>), ② 문장을 사실과 흐름으로 갈라 끊기(<a class="code" href="#S1">S1</a>), ③ 관념적인 <q>~처럼</q>을 사물 비유나 단언으로 줄이기(<a class="code" href="#D9">D9</a>·<a class="code" href="#E1">E1</a>)다. ①이 원리에 해당하고 ②③은 겉모양이므로, ①을 먼저 하고 ②③을 나중에 한다.</li><li>장면 뒤에 붙이는 표시 예: <code>[적용: D1 감정어→몸, D2 시선 돌리기, S1 단문, E4 아포리즘 마감 / 원리 P1·P2]</code></li></ul></section>
+<section class="sec sec-10" id="s10"><header class="sec-head"><span class="sec-n">10</span><div><h2>근거 표</h2><p class="sec-sub">규칙 × 작품</p></div></header><p>각 칸은 본문에 실은 예문 수다. 모든 규칙이 네 권 모두에서 예문을 갖는다(<a class="code" href="#T3">T3</a> 표기 규칙 제외).</p><div class="tbl-wrap"><table class="evidence"><thead><tr><th>규칙</th><th>층위</th><th class="th-kal">칼의 노래</th><th class="th-nam">남한산성</th><th class="th-gae">개</th><th class="th-gong">공터에서</th></tr></thead><tbody><tr data-layer="core"><th scope="row"><a class="code" href="#D1">D1</a> 감정→몸</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="core"><th scope="row"><a class="code" href="#D2">D2</a> 시선 돌리기</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#D3">D3</a> 냄새·소리</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#D4">D4</a> 상반 감각</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#D5">D5</a> 사물에 동사</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#D6">D6</a> 물목</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="core"><th scope="row"><a class="code" href="#D7">D7</a> 몸과 생리</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#D8">D8</a> 반복 모티프</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#D9">D9</a> 사물 비유</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="core"><th scope="row"><a class="code" href="#E1">E1</a> 단정</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="core"><th scope="row"><a class="code" href="#E2">E2</a> 행정의 언어</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="core"><th scope="row"><a class="code" href="#E3">E3</a> 원리→귀결</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#E4">E4</a> 아포리즘</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#E5">E5</a> 기록식 소개</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#E6">E6</a> 대칭·역설</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="core"><th scope="row"><a class="code" href="#E7">E7</a> 짐작·모름</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#S1">S1</a> 단문/장문</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#S2">S2</a> 주어 반복</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#S3">S3</a> 접속어</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#S4">S4</a> 시제</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#S5">S5</a> 동사 반복</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#S6">S6</a> 짧은 마감</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="surface"><th scope="row"><a class="code" href="#S7">S7</a> 현장 용어</th><td><span class="layer-badge sm lb-surface">겉모양</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td></tr><tr data-layer="device"><th scope="row"><a class="code" href="#T1">T1</a> 짧은 대사</th><td><span class="layer-badge sm lb-device">장치</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr data-layer="core"><th scope="row"><a class="code" href="#T2">T2</a> 말의 기능 판독</th><td><span class="layer-badge sm lb-core">핵심</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c1"><span class="dots" aria-hidden="true">●</span><span class="n">1</span></td><td class="cnt c2"><span class="dots" aria-hidden="true">●●</span><span class="n">2</span></td></tr><tr class="total"><th scope="row">합계</th><td></td><td class="num">29</td><td class="num">28</td><td class="num">41</td><td class="num">40</td></tr></tbody></table></div><p class="small">1차판에서는 <a class="code" href="#S1">S1</a>·<a class="code" href="#S5">S5</a>에 『개』·『공터에서』 예문이 없었고, <a class="code" href="#S2">S2</a>·<a class="code" href="#S3">S3</a>·<a class="code" href="#S4">S4</a>는 수치만 있었으며, <a class="code" href="#T2">T2</a>에는 『개』 예문이, <a class="code" href="#E6">E6</a>에는 『개』 직접 인용이 없었다. 2차판에서 모두 채웠다. 『칼의 노래』 예문은 오히려 가장 적은 편이다.</p></section>
+<section class="sec sec-11" id="s11"><header class="sec-head"><span class="sec-n">11</span><div><h2>근거 수치</h2><p class="sec-sub">전권 대상, 1만 자당 빈도</p></div></header><div class="tbl-wrap"><table class="stats"><thead><tr><th>표지</th><th class="th-kal">칼의 노래</th><th class="th-nam">남한산성</th><th class="th-gae">개</th><th class="th-gong">공터에서</th></tr></thead><tbody><tr><th scope="row">문장 수(대사 포함)</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:100%"></span><span class="bar-n">6,535</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:92%"></span><span class="bar-n">5,993</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:37%"></span><span class="bar-n">2,405</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:80%"></span><span class="bar-n">5,250</span></td></tr><tr><th scope="row">문장 길이 중앙값</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:82%"></span><span class="bar-n">28자</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:76%"></span><span class="bar-n">26자</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:100%"></span><span class="bar-n">34자</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:76%"></span><span class="bar-n">26자</span></td></tr><tr><th scope="row">20자 이하 문장 비율</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:76%"></span><span class="bar-n">29%</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:89%"></span><span class="bar-n">34%</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:55%"></span><span class="bar-n">21%</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:100%"></span><span class="bar-n">38%</span></td></tr><tr><th scope="row">냄새</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:10%"></span><span class="bar-n">2.0</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:9%"></span><span class="bar-n">1.9</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:100%"></span><span class="bar-n">21.0</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:19%"></span><span class="bar-n">3.9</span></td></tr><tr><th scope="row">소리</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:59%"></span><span class="bar-n">5.2</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:85%"></span><span class="bar-n">7.5</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:100%"></span><span class="bar-n">8.8</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:85%"></span><span class="bar-n">7.5</span></td></tr><tr><th scope="row">~처럼</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:63%"></span><span class="bar-n">6.6</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:31%"></span><span class="bar-n">3.2</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:100%"></span><span class="bar-n">10.4</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:45%"></span><span class="bar-n">4.7</span></td></tr><tr><th scope="row">~ㄹ 것이었다</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:100%"></span><span class="bar-n">2.7</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:48%"></span><span class="bar-n">1.3</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:26%"></span><span class="bar-n">0.7</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:37%"></span><span class="bar-n">1.0</span></td></tr><tr><th scope="row">그러나</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:67%"></span><span class="bar-n">1.2</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:22%"></span><span class="bar-n">0.4</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:100%"></span><span class="bar-n">1.8</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:6%"></span><span class="bar-n">0.1</span></td></tr><tr><th scope="row">하지만</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:0%"></span><span class="bar-n">0.0</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:17%"></span><span class="bar-n">0.2</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:100%"></span><span class="bar-n">1.2</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:17%"></span><span class="bar-n">0.2</span></td></tr><tr><th scope="row">현재형 단정(~ㄴ다.)</th><td class="bar-cell"><span class="bar b-kal-bg" style="width:16%"></span><span class="bar-n">0.7</span></td><td class="bar-cell"><span class="bar b-nam-bg" style="width:9%"></span><span class="bar-n">0.4</span></td><td class="bar-cell"><span class="bar b-gae-bg" style="width:100%"></span><span class="bar-n">4.3</span></td><td class="bar-cell"><span class="bar b-gong-bg" style="width:9%"></span><span class="bar-n">0.4</span></td></tr></tbody></table></div><p class="small">전권 단순 집계(횟수): <q>그녀</q> 0·0·0·0, <q>그 여자</q> 31·0·0·11, <q>본래</q> 9·13·5·3, <q>슬펐다</q> 1·0·0·1, 반복 모티프 <q>사각사각</q>(칼) 5, <q>컹컹</q>(개) 10, <q>아가미</q>(공터) 15.</p><p class="small">문장 분리는 마침표·물음표·느낌표 기준의 기계적 분리라 대략적인 수치다.</p></section>
+    <p class="foot">원문 인용은 문체를 보여 주는 데 필요한 한두 문장으로만 했고, 모두 원문과 글자 단위로 대조했습니다. 원본 문서: 김훈식_문체규칙.md</p>
+  </main>
+</div>
+
+<script>
+(function () {
+  var body = document.body;
+  var rules = Array.prototype.slice.call(document.querySelectorAll(".rule"));
+  var state = { layer: "all", book: "all" };
+  try {
+    var saved = JSON.parse(localStorage.getItem("kh-filter") || "{}");
+    if (saved.layer) state.layer = saved.layer;
+    if (saved.book) state.book = saved.book;
+  } catch (e) {}
+
+  function apply() {
+    body.setAttribute("data-book", state.book);
+    rules.forEach(function (r) {
+      r.hidden = state.layer !== "all" && r.getAttribute("data-layer") !== state.layer;
+    });
+    document.querySelectorAll("[data-layer-filter]").forEach(function (b) {
+      var on = b.getAttribute("data-layer-filter") === state.layer;
+      b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    document.querySelectorAll("[data-book-filter]").forEach(function (b) {
+      var on = b.getAttribute("data-book-filter") === state.book;
+      b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    try { localStorage.setItem("kh-filter", JSON.stringify(state)); } catch (e) {}
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-layer-filter],[data-book-filter]");
+    if (!t) return;
+    if (t.hasAttribute("data-layer-filter")) state.layer = t.getAttribute("data-layer-filter");
+    else state.book = t.getAttribute("data-book-filter");
+    apply();
+  });
+  // 링크로 숨겨진 규칙에 가면 걸러 보기를 푼다
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var el = document.getElementById(a.getAttribute("href").slice(1));
+    if (el && el.hidden) { state.layer = "all"; apply(); }
+  }, true);
+  apply();
+
+  // 요약 카드 복사
+  var btn = document.getElementById("copy-summary");
+  var ta = document.getElementById("summary-plain");
+  var status = document.getElementById("copy-status");
+  if (btn && ta) {
+    btn.addEventListener("click", function () {
+      var text = ta.value;
+      function fallback() {
+        ta.classList.add("show"); ta.removeAttribute("aria-hidden"); ta.tabIndex = 0;
+        ta.focus(); ta.select();
+        status.textContent = "아래 글을 선택해 두었습니다. Ctrl+C(⌘+C)로 복사하세요.";
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          status.textContent = "복사했습니다.";
+        }, fallback);
+      } else { fallback(); }
+    });
+  }
+
+  // 목차 현재 위치 표시
+  var links = {};
+  document.querySelectorAll(".toc-side > ol > li > a").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && links[en.target.id]) {
+          Object.keys(links).forEach(function (k) { links[k].classList.remove("active"); });
+          links[en.target.id].classList.add("active");
+        }
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    document.querySelectorAll(".sec").forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
